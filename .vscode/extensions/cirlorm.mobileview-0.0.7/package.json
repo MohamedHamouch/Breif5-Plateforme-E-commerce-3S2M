@@ -1,0 +1,117 @@
+{
+	"name": "mobileview",
+	"displayName": "MobileView",
+	"description": "Provides a responsive mobile view for testing mobile view of your apps and websites directly form vs code.",
+	"publisher": "cirlorm",
+	"version": "0.0.7",
+	"icon": "media/icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/champ3oy/MobileView"
+	},
+	"author": {
+		"name": "Jonathan Selorm Akoto",
+		"email": "cirlorm6@gmail.com",
+		"url": "https://cirlorm.dev"
+	},
+	"keywords": [
+		"responsive",
+		"mobile view",
+		"browser",
+		"phone",
+		"iphone",
+		"iphone x",
+		"emulator",
+		"simulator"
+	],
+	"engines": {
+		"vscode": "^1.51.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:mobileview.start",
+		"onCommand:startIphonex.start",
+		"onCommand:startPixel.start"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "mobileview.start",
+				"title": "Iphone X"
+			},
+			{
+				"command": "startIphonex.start",
+				"title": "Iphone 8"
+			},
+			{
+				"command": "startPixel.start",
+				"title": "Pixel 1"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "mobileView",
+					"title": "MobileView",
+					"icon": "media/phone.svg"
+				}
+			],
+			"panel": [
+				{
+					"id": "mobileViewIconP",
+					"title": "MobileView",
+					"icon": "media/phone.svg"
+				}
+			]
+		},
+		"views": {
+			"mobileView": [
+				{
+					"id": "screens",
+					"name": "Screen",
+					"contextualTitle": "MobileView",
+					"icon": "media/phone.svg"
+				}
+			]
+		},
+		"viewsWelcome": [
+			{
+				"view": "screens",
+				"contents": "Thanks for using MobileView [learn more](https://github.com/champ3oy/MobileView/).\n[Use iPhone X](command:mobileview.start)\n[Use iPhone 8](command:startIphonex.start)\n[Use Pixel 1](command:startPixel.start)"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "yarn run lint",
+		"test": "node ./test/runTest.js",
+		"publish": "vsce publish -p mrc6oyyrrwvsmxvat2drndl4goyj77vzas3ghn3imuzhpakxi77a"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.51.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.0",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.9.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.0.2",
+		"vscode-test": "^1.4.0"
+	},
+	"__metadata": {
+		"id": "8611eb81-6a66-40b3-97a3-9eefbebc0be4",
+		"publisherId": "dc2a706c-db79-4bdf-bad0-0c7d37ac6f41",
+		"publisherDisplayName": "cirlorm",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1729425208092,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}

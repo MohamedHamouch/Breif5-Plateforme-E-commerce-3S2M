@@ -1,0 +1,90 @@
+{
+	"name": "dadroit-json-generator",
+	"displayName": "Dadroit JSON Generator",
+	"description": "Generate nested sample JSON data using custom templates.",
+	"version": "1.2.2",
+	"icon": "images/icon.png",
+	"publisher": "Dadroit",
+	"preview": false,
+	"keywords": [
+		"JSON",
+		"random",
+		"generator",
+		"sample",
+		"mock data",
+		"template",
+		"make"
+	],
+	"galleryBanner": {
+		"color": "#FFBB00",
+		"theme": "light"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/DadroitOrganization/JSONGeneratorExtension.git"
+	},
+	"author": "Dadroit hi@dadroit.com",
+	"engines": {
+		"vscode": "^1.82.0"
+	},
+	"categories": [
+		"Debuggers",
+		"Testing",
+		"Programming Languages"
+	],
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/DadroitOrganization/JSONGeneratorExtension/issues"
+	},
+	"homepage": "https://github.com/DadroitOrganization/JSONGeneratorExtension.git",
+	"activationEvents": [
+		"*"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "Generate JSON Sample",
+				"title": "Generate JSON Sample",
+				"category": "Dadroit"
+			},
+			{
+				"command": "Generate JSON",
+				"title": "Generate JSON",
+				"category": "Dadroit"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "vsce package",
+		"lint": "eslint src --ext ts"
+	},
+	"devDependencies": {
+		"@types/node": "16.x",
+		"@types/vscode": "^1.82.0",
+		"@typescript-eslint/eslint-plugin": "^6.4.1",
+		"@typescript-eslint/parser": "^6.4.1",
+		"eslint": "^8.47.0",
+		"ts-loader": "^9.4.4",
+		"typescript": "^5.1.6",
+		"vsce": "^2.15.0",
+		"webpack": "^5.88.2",
+		"webpack-cli": "^5.1.4"
+	},
+	"__metadata": {
+		"id": "33c98681-6920-4ff8-b2f8-9b0b42833278",
+		"publisherId": "d5be81de-abaf-451f-bae0-6f813ae7b15b",
+		"publisherDisplayName": "Dadroit",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1731276562590,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}
