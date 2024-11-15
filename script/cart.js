@@ -1,4 +1,5 @@
 const booksContainer = document.querySelector('#cart-books-container');
+const emptyBtn = document.querySelector('#empty-cart-btn');
 
 let cartData = [];
 document.addEventListener("DOMContentLoaded", () => {
@@ -58,6 +59,10 @@ function displayCart() {
         });
 
     });
-
-
 }
+
+emptyBtn.addEventListener('click',() => {
+    cartData = [];
+    displayCart();
+    localStorage.setItem('card', JSON.stringify(cartData));
+});
