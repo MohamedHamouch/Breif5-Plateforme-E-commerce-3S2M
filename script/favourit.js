@@ -28,7 +28,7 @@ function displayFavBooks() {
         return;
     }
 
-    favData.forEach((book, index) => {
+    favData.forEach(book => {
 
         let newBook = document.createElement('div');
         newBook.className = "grid grid-cols-[35%,1fr] p-2 sm:p-4 min-h-44 rounded-md md:rounded-lg fav-book"
@@ -53,7 +53,7 @@ function displayFavBooks() {
         const removeButton = newBook.querySelector('.remove-fav-btn');
         removeButton.addEventListener('click', () => {
             newBook.remove();
-            // const bookIndex = favData.findIndex(favBook => favBook.title === book.title);
+            const bookIndex = favData.findIndex(favBook => favBook.title === book.title);
             if (bookIndex !== -1) {
                 favData.splice(bookIndex, 1);
                 localStorage.setItem('favourite', JSON.stringify(favData));
