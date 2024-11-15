@@ -70,7 +70,7 @@ filterByLang.onchange= function() {
 
     for (let book of booksData) { 
           
-        if(book.language === filterByLang.value && book.category.includes(filterByGenre.value)){filteredData.push(book)}
+        if(book.language === filterByLang.value && book.category === filterByGenre.value){filteredData.push(book)}
     }
     displayBooks(filteredData);
     }
@@ -80,7 +80,7 @@ filterByGenre.onchange = function () {
     if(filterByLang.value === "none"){
         for (let book of booksData) { 
           
-            if(book.language === filterByLang.value ){filteredData.push(book)}
+            if(book.category === filterByGenre.value ){filteredData.push(book)}
         }
         displayBooks(filteredData);
         return;
@@ -88,7 +88,7 @@ filterByGenre.onchange = function () {
 
     for (let book of booksData) { 
           
-        if(book.language === filterByLang.value && book.category.includes(filterByGenre.value)){filteredData.push(book)}
+        if(book.language === filterByLang.value && book.category === filterByGenre.value){filteredData.push(book)}
     }
     displayBooks(filteredData);
     }
