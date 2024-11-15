@@ -37,60 +37,139 @@ document.addEventListener("DOMContentLoaded", () => {
     const filterByGenre = document.getElementById('genre');
     const filterByLang = document.getElementById('language');
     const sorting = document.getElementById('sort');
-
+    const filterByType = document.getElementById("byType")
+    
 sorting.onchange = function(){
 
-    switch(sorting.value){
-        case "low": booksData.sort(function (a,b){return a.price-b.price}) ; displayBooks(booksData);break;
-        case "high": booksData.sort(function (a,b){return b.price-a.price}) ; displayBooks(booksData);break;
-        case "a": booksData.sort(function (a,b){
+    if(filterByGenre.value === "none" && filterByLang.value === "none" && filterByType.value === "none" ){
+        sortt(booksData);
+    }
+    else{
+        sortt(filteredData);
+    }
+    
+    
+   function sortt(data){
+     switch(sorting.value){
+        case "low": data.sort(function (a,b){return a.price-b.price}) ; displayBooks(data);break;
+        case "high": data.sort(function (a,b){return b.price-a.price}) ; displayBooks(data);break;
+        case "a": data.sort(function (a,b){
         if (a.title[0] < b.title[0]) {return -1;}
         if (a.title[0] > b.title[0]) {return 1;}
-        return 0;}) ; displayBooks(booksData);break;
-        case "z": booksData.sort(function (a,b){
+        return 0;}) ; displayBooks(data);break;
+        case "z": data.sort(function (a,b){
         if (a.title[0] > b.title[0]) {return -1;}
         if (a.title[0] < b.title[0]) {return 1;}
-        return 0;}) ; displayBooks(booksData);break;
-    }
+        return 0;}) ; displayBooks(data);break;
+    }}
 
 }
 let filteredData = [];
 
 filterByLang.onchange= function() {
-
-    filteredData = [];
-    if(filterByGenre.value === "none"){
-        for (let book of booksData) { 
-          
-            if(book.language === filterByLang.value ){filteredData.push(book)}
-        }
-        displayBooks(filteredData);
-        return;
+    
+    Filter(filterByGenre.value,filterByLang.value,filterByType.value,'l');
     }
 
-    for (let book of booksData) { 
+   function Filter (byGenre,byLang,byType,filter) {
+        filteredData = [];
+        
+    switch (filter) {
+
+        case "g":if(byLang === "none" && byType === "none"){
+            
+            
+            for (let book of booksData) { 
+              
+                if(book.category === byGenre ){ filteredData.push(book)}
+            }
+            displayBooks(filteredData);
+            return;
+        }else {
+            if(byLang != "none" && byType != "none"){
+            for (let book of booksData) { 
           
-        if(book.language === filterByLang.value && book.category === filterByGenre.value){filteredData.push(book)}
-    }
-    displayBooks(filteredData);
-    }
+                if(book.language === byLang && book.category === byGenre && book.type === byType){filteredData.push(book)}
+            }}
+            else if (byLang != "none") {
+                for (let book of booksData) { 
+          
+                    if(book.language === byLang && book.category === byGenre){filteredData.push(book)}
+                }
+            }
+            else if ( byType != "none") {
+                for (let book of booksData) { 
+          
+                    if(book.type === byType && book.category === byGenre){filteredData.push(book)}
+                }
+            }
+            displayBooks(filteredData);
+            return;
+        
+        } ;
+        case "l":  if(byGenre === "none" && byType === "none"){
+            for (let book of booksData) { 
+              
+                if(book.language === byLang ){filteredData.push(book)}
+            }
+            displayBooks(filteredData);
+            return;
+        }else {
+            if(byGenre != "none" && byType != "none"){
+            for (let book of booksData) { 
+          
+                if(book.language === byLang && book.category === byGenre && book.type === byType){filteredData.push(book)}
+            }}
+            else if (byGenre != "none") {
+                for (let book of booksData) { 
+          
+                    if(book.language === byLang && book.category === byGenre){filteredData.push(book)}
+                }
+            }
+            else if ( byType != "none") {
+                for (let book of booksData) { 
+          
+                    if(book.type === byType && book.language === byLang){filteredData.push(book)}
+                }
+            }
+            displayBooks(filteredData);
+            return;
+        
+        } ; 
+        case "t":  if(byLang === "none" && byGenre === "none"){
+            for (let book of booksData) { 
+                
+                if(book.type === byType ){filteredData.push(book)}
+            }
+            displayBooks(filteredData);
+            return;
+        }else {
+            if(byLang != "none" && byGenre != "none"){
+            for (let book of booksData) { 
+          
+                if(book.language === byLang && book.category === byGenre && book.type === byType){filteredData.push(book)}
+            }}
+            else if (byLang != "none") {
+                for (let book of booksData) { 
+          
+                    if(book.language === byLang && book.type === byType){filteredData.push(book)}
+                }
+            }
+            else if ( byGenre != "none") {
+                for (let book of booksData) { 
+          
+                    if(book.type === byType && book.category === byGenre){filteredData.push(book)}
+                }
+            }
+            displayBooks(filteredData);
+            return;
+        
+        } ;
+    }}
+    
 filterByGenre.onchange = function () {
 
-    filteredData = [];
-    if(filterByLang.value === "none"){
-        for (let book of booksData) { 
-          
-            if(book.category === filterByGenre.value ){filteredData.push(book)}
-        }
-        displayBooks(filteredData);
-        return;
-    }
-
-    for (let book of booksData) { 
-          
-        if(book.language === filterByLang.value && book.category === filterByGenre.value){filteredData.push(book)}
-    }
-    displayBooks(filteredData);
+    Filter(filterByGenre.value,filterByLang.value,filterByType.value,'g');
     }
 
 const Search = document.getElementById("search");
@@ -135,4 +214,9 @@ Search.onkeyup = function () {
       }
     }
     }
+}
+
+
+filterByType.onchange = function () {
+    Filter(filterByGenre.value,filterByLang.value,filterByType.value,'t');
 }

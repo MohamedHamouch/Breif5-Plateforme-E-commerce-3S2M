@@ -134,7 +134,7 @@
         </section>
         <section>
           <div class="my-8 bg-orange-100 p-3 flex flex-wrap w-[80%] max-[400px]:w-full justify-between rounded-md gap-3 justify-self-center">
-          <div class="FilterSectuin flex  gap-x-2">
+          <div class="FilterSectuin flex flex-wrap  gap-2">
             <h3 class="text-blue-950 font-bold text-xl" style="font-family:'Poppins';">Filter:</h3>
             <select name="byGenre" id="genre" class="border-2 outline-none rounded-md border-black text-sm w-[113px] self-center p-1"><option value="none">By Genre :</option>
             <option value="Fiction" class="text-center">Fiction</option>
@@ -145,10 +145,16 @@
             <option value="Horror" class="text-center">Horror</option>
             </select>
             <select name="byLanuagege" id="language" class="border-2 outline-none rounded-md border-black text-sm w-[113px] self-center p-1">
-            <option value="none">By Language</option>
+            <option value="none">By Language:</option>
             <option value="Arabic" class="text-center">Arabic</option>
             <option value="English" class="text-center">English</option>
             <option value="French" class="text-center">French</option>
+          </select>
+          <select name="byType" id="byType" class="border-2 outline-none rounded-md border-black text-sm w-[113px] self-center p-1">
+            <option value="none">By Type:</option>
+            <option value="Adult" class="text-center">Adult</option>
+            <option value="Young Adult (YA)" class="text-center">Young Adult(YA)</option>
+            <option value="Children's Fiction" class="text-center">Children's Fiction</option>
           </select>
           </div>
           <div class="SortSection flex gap-x-2">
