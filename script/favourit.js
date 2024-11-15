@@ -16,6 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function displayFavBooks() {
+    favContainer.innerHTML = ""
+    favContainer.className = "w-full sm:w-4/5 md:w-3/4 lg:w-11/12 xl:w-10/12 min-h-44 grid lg:grid-cols-2 gap-y-8 lg:gap-x-8 xl:gap-x-14 px-3 sm:px-5 m-auto text-base sm:text-lg md:text-2xlg lg:text-lg xl:text-xl";
+    if (favData.length === 0) {
+        const emptyMessage = document.createElement('p');
+        emptyMessage.textContent = "Your favourite list is empty.";
+        emptyMessage.className = "text-center text-gray-500 mt-4 mb-6 md:mb-12 text-lg md:text-3xl font-semibold";
+        favContainer.classList.remove("grid", "lg:grid-cols-2", "gap-y-8", "lg:gap-x-8", "xl:gap-x-14");
+        favContainer.classList.add("flex", "flex-col", "items-center", "justify-center");
+        favContainer.appendChild(emptyMessage);
+        return;
+    }
+    
     favData.forEach(book => {
 
         let newBook = document.createElement('div');
@@ -45,10 +57,12 @@ function displayFavBooks() {
             if (bookIndex !== -1) {
                 favData.splice(bookIndex, 1); 
                 localStorage.setItem('favourite', JSON.stringify(favData));
+                if (favData.length === 0) {
+                    displayFavBooks();
+                }
             }
         });
     });
-
 }
 
 
