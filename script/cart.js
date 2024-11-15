@@ -20,7 +20,7 @@ function displayCart() {
         return;
     }
 
-    cartData.forEach((book,index) => {
+    cartData.forEach(book => {
         const cartBook = document.createElement('div');
         cartBook.className = "grid grid-cols-[50%,auto,auto,auto,3%] items-center border-b p-2 gap-2 sm:gap-4 hover:bg-gray-100";
         cartBook.innerHTML = `
@@ -39,7 +39,7 @@ function displayCart() {
                         </div>
 
                         <!-- subtotal -->
-                        <div class="text-gray-700">$160.00</div>
+                        <div class="text-gray-700">${book.price * 1}</div>
 
                         <!-- delete icon -->
                         <button class="trash-icon">
@@ -51,18 +51,23 @@ function displayCart() {
         const removeIcon = cartBook.querySelector('.trash-icon');
         removeIcon.addEventListener('click', () => {
             cartBook.remove();
-            cartData.splice(index, 1);
-            localStorage.setItem('card', JSON.stringify(cartData));
-            if (cartData.length === 0) {
-                displayCart();
+            const bookIndex = cartData.findIndex(currentBook => currentBook.title === book.title);
+            if (bookIndex !== -1) {
+                cartData.splice(bookIndex, 1);
+                localStorage.setItem('card', JSON.stringify(cartData));
+                if (cartData.length === 0) {
+                    displayCart();
+                }
             }
+
         });
 
     });
 }
 
-emptyBtn.addEventListener('click',() => {
+emptyBtn.addEventListener('click', () => {
     cartData = [];
+    console.log(cartData)
     displayCart();
     localStorage.setItem('card', JSON.stringify(cartData));
 });
