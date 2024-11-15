@@ -161,79 +161,81 @@
                     <div>Subtotal</div>
                     <div></div>
                 </div>
+                <section id="cart-books-container">
+                    <!-- Book -->
+                    <div
+                        class="grid grid-cols-[50%,auto,auto,auto,3%] items-center border-b p-2 gap-2 sm:gap-4 hover:bg-gray-100">
+                        <!-- cover and title -->
+                        <div class="flex items-center gap-2">
+                            <img src="../images/cart images/cover1.jpg" alt="The Anxious Generation"
+                                class="w-12 h-16 object-contain">
+                            <span class="text-gray-800">The Anxious Generation</span>
+                        </div>
 
-                <!-- Book -->
-                <div
-                    class="grid grid-cols-[50%,auto,auto,auto,3%] items-center border-b p-2 gap-2 sm:gap-4 hover:bg-gray-100">
-                    <!-- cover and title -->
-                    <div class="flex items-center gap-2">
-                        <img src="../images/cart images/cover1.jpg" alt="The Anxious Generation"
-                            class="w-12 h-16 object-contain">
-                        <span class="text-gray-800">The Anxious Generation</span>
+                        <!-- prix -->
+                        <div class="text-gray-700">$80.00</div>
+
+                        <!-- quantity -->
+                        <div class="">
+                            <input type="number" class="w-12 text-center border rounded" value="2" min="1">
+                        </div>
+
+                        <!-- subtotal -->
+                        <div class="text-gray-700">$160.00</div>
+
+                        <!-- delete icon -->
+                        <button class="trash-icon">
+                            <i class="fa-solid fa-trash" style="color: #ffc857;"></i>
+                        </button>
                     </div>
 
-                    <!-- prix -->
-                    <div class="text-gray-700">$80.00</div>
+                    <!-- book 2 -->
+                    <!-- <div
+                        class="grid grid-cols-[50%,auto,auto,auto,3%] items-center border-b p-2 gap-2 sm:gap-4 hover:bg-gray-100">
 
-                    <!-- quantity -->
-                    <div class="">
-                        <input type="number" class="w-12 text-center border rounded" value="2" min="1">
-                    </div>
+                        <div class="flex items-center gap-2">
+                            <img src="../images/cart images/cover2.jpg" alt="Fahrenheit 451"
+                                class="w-12 h-16 object-contain">
+                            <span class="text-gray-800">Fahrenheit 451</span>
+                        </div>
 
-                    <!-- subtotal -->
-                    <div class="text-gray-700">$160.00</div>
+                        <div class="text-gray-700">$100.00</div>
 
-                    <!-- delete icon -->
-                    <div>
-                        <i class="fa-solid fa-trash" style="color: #ffc857;"></i>
-                    </div>
-                </div>
+                        <div class="">
+                            <input type="number" class="w-12 text-center border rounded" value="1" min="1">
+                        </div>
 
-                <!-- book 2 -->
-                <div
-                    class="grid grid-cols-[50%,auto,auto,auto,3%] items-center border-b p-2 gap-2 sm:gap-4 hover:bg-gray-100">
+                        <div class="text-gray-700">$100.00</div>
 
-                    <div class="flex items-center gap-2">
-                        <img src="../images/cart images/cover2.jpg" alt="Fahrenheit 451"
-                            class="w-12 h-16 object-contain">
-                        <span class="text-gray-800">Fahrenheit 451</span>
-                    </div>
+                        <div>
+                            <i class="fa-solid fa-trash" style="color: #ffc857;"></i>
+                        </div>
+                    </div> -->
 
-                    <div class="text-gray-700">$100.00</div>
+                    <!-- book 3 -->
+                    <!-- <div
+                        class="grid grid-cols-[50%,auto,auto,auto,3%] items-center border-b p-2 gap-2 sm:gap-4 hover:bg-gray-100">
 
-                    <div class="">
-                        <input type="number" class="w-12 text-center border rounded" value="1" min="1">
-                    </div>
+                        <div class="flex items-center gap-2">
+                            <img src="../images/cart images/cover3.jpg" alt="The Body Keeps The Score"
+                                class="w-12 h-16 object-contain">
+                            <span class="text-gray-800">The Body Keeps The Score</span>
+                        </div>
 
-                    <div class="text-gray-700">$100.00</div>
+                        <div class="text-gray-700">$80.00</div>
 
-                    <div>
-                        <i class="fa-solid fa-trash" style="color: #ffc857;"></i>
-                    </div>
-                </div>
+                        <div class="">
+                            <input type="number" class="w-12 text-center border rounded" value="1" min="1">
+                        </div>
 
-                <!-- book 3 -->
-                <div
-                    class="grid grid-cols-[50%,auto,auto,auto,3%] items-center border-b p-2 gap-2 sm:gap-4 hover:bg-gray-100">
+                        <div class="text-gray-700">$80.00</div>
 
-                    <div class="flex items-center gap-2">
-                        <img src="../images/cart images/cover3.jpg" alt="The Body Keeps The Score"
-                            class="w-12 h-16 object-contain">
-                        <span class="text-gray-800">The Body Keeps The Score</span>
-                    </div>
+                        <div>
+                            <i class="fa-solid fa-trash" style="color: #ffc857;"></i>
+                        </div>
+                    </div> -->
+                </section>
 
-                    <div class="text-gray-700">$80.00</div>
-
-                    <div class="">
-                        <input type="number" class="w-12 text-center border rounded" value="1" min="1">
-                    </div>
-
-                    <div class="text-gray-700">$80.00</div>
-
-                    <div>
-                        <i class="fa-solid fa-trash" style="color: #ffc857;"></i>
-                    </div>
-                </div>
 
             </div>
             <!-- buttons -->
@@ -346,7 +348,7 @@
 
 
     <script src="../script/home.js"></script>
-    <script src="../script/totop.js"></script>
+    <script src="../script/cart.js"></script>
 </body>
 
 </html>

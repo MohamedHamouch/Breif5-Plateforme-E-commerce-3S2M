@@ -6,7 +6,7 @@
         font-size: 0.85rem;
     }
 }
-main button{
+main button.text-white{
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
 }
 main button:hover{
