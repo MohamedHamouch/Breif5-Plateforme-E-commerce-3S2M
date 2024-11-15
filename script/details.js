@@ -8,9 +8,9 @@ function affichData() {
 
     table = `  
    <!-- image principale -->
-            <div class=" img-hero flex bg-neutral-100	justify-center items-center content-center w-[300px] h[434px] lg:w-[500px] lg:h-[530px] my-2">
+            <div class=" img-hero flex bg-neutral-100	transition hover:scale-110 hover:duration-500 justify-center items-center content-center w-[300px] h-[434px] lg:w-[420px] lg:h-[480px] my-2">
                 <img src=${detailbook[0].img} id="kingImg"
-                    class="w-[280px] h-[400px] lg:w-[480] lg:h-[500px]  ">
+                    class="w-[280px] h-[400px] lg:w-[400px] lg:h-[450px]  ">
             </div>
 
             <!-- container principale des informations -->
@@ -29,7 +29,7 @@ function affichData() {
 
                     <!-- etoile -->
                     <div class="mb-2 flex"> 
-                    <div class="gap-2>
+                    <div >
                     <span> <i class="fa-solid fa-star " style="color: #FFD43B;"></i></span>
                         <span> <i class="fa-solid fa-star" style="color: #FFD43B;"></i></span>
                          <span> <i class="fa-solid fa-star" style="color: #FFD43B;"></i></span>
@@ -38,7 +38,7 @@ function affichData() {
                     </div>
 
                          <!-- prix -->
-                        <pre><span class="font-bold text-2xl">(120 views)</span> | <span id="price" class="font-bold text-2xl">${detailbook[0].price} $</span> | <span  id="stock" class="font-bold text-2xl">${detailbook[0].stock}</span></pre>
+                        <pre class="text-center" ><span class="font-bold text-xl ">(120 views)</span>|<span id="price" class="font-bold text-2xl">${detailbook[0].price} $</span>|<span  id="stock" class="font-bold text-2xl">${detailbook[0].stock}</span></pre>
                     </div>
                    
                 </div>
@@ -55,18 +55,18 @@ function affichData() {
                     <div class="flex items-center justify-between  ">
 
                         <!-- button de quantite -->
-                        <div class="border-2 border-solid border-black  h-[46px] flex  rounded-md">
+                        <div class="border-2 border-solid border-black  h-[46px] flex  rounded-md ">
                             <button id="moins" class=" w-[30px] h-[40px] md:w-[40px] md:h-[44px] text-black ">-</button>
                             <button id="countour" class=" md:w-[80px] h-[44px] w-[60px] border-r-2 border-l-2 border-solid border-black text-black ">0</button>
                             <button id="plus" class="w-[30px] h-[43px] md:w-[40px]  text-white text-center  rounded-tr-[3.5px]  rounded-br-[3.5px]  bg-red-500 ">+</button>
                         </div>
 
                         <!-- button de buy now -->
-                        <div class="h-[45px] md:w-[165px] w-[120px] bg-red-500 border-1 border-solid border-black  text-center content center items-center rounded-md">
+                        <div class="h-[45px] md:w-[165px] w-[120px] bg-red-500 border-1 border-solid border-black  text-center content center items-center rounded-md transition hover:scale-125 hover:duration-500	">
                             <a href="cart.html"><button id="buyNowbutton" class="rounded-sm text-center text-white h-[45px] md:w-[165px] w-[120px] ">Buy Now</button></a>  
                         </div>
 
-                        <div>
+                        <div class="hover:animate-ping duration-0">
                            <button id="heartButton" class="text-black text-xl ">
                     <i class="fa-regular fa-heart fa-2x fa-2x" style="color: #000000;"></i>
                     </button>
@@ -75,12 +75,12 @@ function affichData() {
                     </div>
 
                      <!-- laivraison -->
-               <div class="flex justify-center">
+               <div class="flex justify-around">
                     <div class="border-2 border-black border-solid min-h[180px] w-[350px] md:w-[420px]  lg:w-[500px] ">
                       <div class="flex justify-around border-b-2 border-solid border-black mt-2 gap-8">
-                        <div>
+                        <div >
                             <img src="../images/details/delivery.png" alt="icone de voiture de laivraison"
-                                class="h-[40px] w-[40px]">
+                                class="h-[40px] w-[40px] ml-2">
                         </div>
 
                         <div class="gap-5">
@@ -223,7 +223,7 @@ function showdata() {
             `      
         <div id="book-element-${i}">
         
-         <div class="bg-custemgraytext w-[270px] h-[250px] flex justify-center items-center relative" id="box-book-${i}">
+         <div class="bg-custemgraytext w-[270px] h-[250px] flex justify-center items-center relative transition hover:scale-110 hover:duration-500" id="box-book-${i}">
             <div class="w-[123px] h-[175px]">
                 <img src=${data[i].img} alt="">
             </div>
