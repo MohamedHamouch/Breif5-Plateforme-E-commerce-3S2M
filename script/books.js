@@ -1,4 +1,4 @@
-
+let currentPage = 1;
 const booksContainer = document.querySelector('.books-container');
 let booksData = []
 
@@ -21,6 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     function displayBooks (data){
 
+        let pagesNumber = Math.ceil((data.length+1)/booksPerPage)  ;
+        
+        let p = 0;
+        for(let i = currentPage;i<=pagesNumber;i++){
+            let page = document.createElement("li");
+        page.classList.add("max-[400px]:px-[12]", "max-[400px]:py-[7px]", "px-[15px]", "py-[10px]", "bg-gray-300", "md:hover:bg-[#4B6587]");
+            page.innerText = i;
+            paginationList.appendChild(page);
+            p++;
+            if(p===5){break;}
+
+        }
+        
        
         booksContainer.innerHTML = "";
 
@@ -68,7 +81,10 @@ sorting.onchange = function(){
 
 }
 let filteredData = [];
-
+const booksPerPage = 12;
+const paginationList = document.querySelector(".pagination");
+const previousPage = document.querySelector("#previousPage");
+const nextPage = document.querySelector("#nextPage");
 filterByLang.onchange= function() {
     if(filterByGenre.value === "none" && filterByLang.value === "none" && filterByType.value === "none"){
         displayBooks(booksData);
