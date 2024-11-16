@@ -34,12 +34,12 @@ function displayCart() {
                         <div class="text-gray-700">$${book.price}</div>
 
                         <!-- quantity -->
-                        <div class="">
-                            <input type="number" class="w-12 text-center border rounded" value="2" min="1">
+                        <div>
+                            <input type="number" class="quantity-input w-12 text-center border rounded" value="${book.quantity}" min="1">
                         </div>
 
                         <!-- subtotal -->
-                        <div class="text-gray-700">${book.price * 1}</div>
+                        <div class="subtotal text-gray-700">${book.price * book.quantity}</div>
 
                         <!-- delete icon -->
                         <button class="trash-icon">
@@ -61,12 +61,28 @@ function displayCart() {
             }
 
         });
+        console.log(typeof book.quantity)
+
+        const newQuantity = cartBook.querySelector('.quantity-input')
+        newQuantity.addEventListener('input', () => {
+
+            if (Number(newQuantity.value) > 0) {
+                book.quantity = Number(newQuantity.value);
+                console.log(typeof book.quantity)
+                const subtotal =  cartBook.querySelector('.subtotal')
+                subtotal.textContent = `$${book.price * book.quantity}`;
+                localStorage.setItem('card', JSON.stringify(cartData));
+            }else{
+                newQuantity.value = book.quantity
+            }
+        });
 
     });
 }
 
 emptyBtn.addEventListener('click', () => {
     cartData = [];
+    booksContainer.innerHTML = ""
     console.log(cartData)
     displayCart();
     localStorage.setItem('card', JSON.stringify(cartData));
