@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function countbook() {
-    let countbook = document.querySelector("#book-count")  
-    countbook.innerHTML = card.length
+    let countbook = document.querySelector("#book-count");
+    countbook.innerHTML = card.length;
 
 }
 
@@ -61,7 +61,7 @@ function displayCart() {
                 if (bookIndex !== -1) {
                     cartData.splice(bookIndex, 1);
                     localStorage.setItem('card', JSON.stringify(cartData));
-                    countbook()
+                    countbook();
                     if (cartData.length === 0) {
                         displayCart();
                     
@@ -97,10 +97,10 @@ function displayCart() {
 
 emptyBtn.addEventListener('click', () => {
     cartData = [];
-    booksContainer.innerHTML = ""
-    console.log(cartData)
+    booksContainer.innerHTML = "";
+    console.log(cartData);
     localStorage.setItem('card', JSON.stringify(cartData));
-    countbook()
+    countbook();
     displayCart();
     
 });
@@ -108,7 +108,7 @@ emptyBtn.addEventListener('click', () => {
 
 
 const subtotals = document.querySelector('#subtotals');
-const totals = document.querySelector('#total')
+const totals = document.querySelector('#total');
 
 function calcTotals() {
     let total = 0;
