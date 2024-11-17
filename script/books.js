@@ -1,16 +1,16 @@
-let currentPage = 1;
+
 const booksContainer = document.querySelector('.books-container');
 let booksData = []
 
 document.addEventListener("DOMContentLoaded", () => {
 
     booksData = JSON.parse(localStorage.getItem('booksData'));
-    displayBooks(booksData);
+    displayBooks(booksData,0);
 
     
 });
     function bookItem(book){
-        return `<div class="w-auto h-[350px] flex flex-col items-center justify-between gap-2 ">
+        return `<div class="w-auto h-[350px] flex flex-col items-center justify-between gap-2 hover:bg-gray-100">
               <div class="bg-[#4B6587] w-[200px] h-[230px] max-[750px]:w-[130px] ">
               <a onclick="" href="../pages/details.html"><img src="${book.img}" alt="${book.title} " class="w-full h-full"></a>
               </div>
@@ -19,12 +19,22 @@ document.addEventListener("DOMContentLoaded", () => {
               <button type="button" id="${book.id}" class="bg-orange-600 font-bold text-white  h-[40px] w-auto text-center max-[600px]:text-xs rounded-md py-2 px-3 ">Add to Cart</button>
             </div>`
     }
-    function displayBooks (data){
-
+    function displayBooks (data,currentPage=0){
+        let booksPerPage = 12;
+        if(data.length===0){
+            booksContainer.innerHTML = '<h1 class="self-center font-bold text-lg">No books found</h1>';
+            paginationList.innerHTML="";
+            let page = document.createElement("li");
+        page.classList.add("max-[400px]:px-[12]", "max-[400px]:py-[7px]", "px-[15px]", "py-[10px]", "bg-gray-300", "md:hover:bg-[#4B6587]","active","bg-slate-500");
+            page.innerText = 1;
+            paginationList.appendChild(page);
+            return;
+        }
         let pagesNumber = Math.ceil((data.length+1)/booksPerPage)  ;
         
         let p = 0;
-        for(let i = currentPage;i<=pagesNumber;i++){
+        paginationList.innerHTML="";
+        for(let i = paginationN;i<=pagesNumber;i++){
             let page = document.createElement("li");
         page.classList.add("max-[400px]:px-[12]", "max-[400px]:py-[7px]", "px-[15px]", "py-[10px]", "bg-gray-300", "md:hover:bg-[#4B6587]");
             page.innerText = i;
@@ -33,19 +43,20 @@ document.addEventListener("DOMContentLoaded", () => {
             if(p===5){break;}
 
         }
+        paginationList.children[currentPage].classList.add("bg-slate-500","active");
         
        
         booksContainer.innerHTML = "";
-
-        data.forEach(book => {
+        booksPerPage=booksPerPage+currentPage * 12;
+        for(let i=currentPage*12;i<booksPerPage;i++){
           let bookElement = document.createElement('div');
             bookElement.classList.add('book-item','w-auto','flex','flex-col','items-center','gap-x-22','gap-y-10','rounded-sm','shadow-[0_3px_7px_-3px_rgba(0,0,0,0.3)]','p-1');
 
-            bookElement.innerHTML = bookItem(book);
+            bookElement.innerHTML = bookItem(data[i]);
             
             booksContainer.appendChild(bookElement);
 
-        });
+        }
     }
 
 
@@ -81,11 +92,66 @@ sorting.onchange = function(){
 
 }
 let filteredData = [];
-const booksPerPage = 12;
 const paginationList = document.querySelector(".pagination");
 const previousPage = document.querySelector("#previousPage");
 const nextPage = document.querySelector("#nextPage");
-filterByLang.onchange= function() {
+
+let paginationN = 1;
+previousPage.onclick = function (){
+    
+if(paginationList.children[0].className.includes("active")){
+    return ;
+}
+let currentPage = document.querySelector(".active").innerText - 1;
+    switch(paginationList.children[currentPage].innerText){
+        case '6':paginationN=1;
+        case '11':paginationN=6;
+        case '16':paginationN=11;
+        case '21':paginationN=16;
+        case '26':paginationN=21;
+        case '31':paginationN=26;}
+paginationList.children[currentPage].classList.remove("active","bg-slate-500");
+paginationList.children[+currentPage-1].classList.add("active","bg-slate-500");
+if(filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none"){
+    displayBooks(filteredData,+currentPage-1);
+    return;
+}
+displayBooks(booksData,+currentPage-1);
+} 
+
+nextPage.onclick = function (){
+   
+    let currentPage = document.querySelector(".active").innerText - 1;
+    console.log(currentPage);
+    
+    if(((filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none") && Math.ceil((filteredData.length+1)/12)<=(+currentPage+1))||Math.ceil((booksData.length+1)/12)<=(+currentPage+1)){
+        return;
+    }
+    
+        switch(paginationList.children[currentPage].innerText){
+            case '5':paginationN=6;break;
+            case '10':paginationN=11;break;
+            case '15':paginationN=16;break;
+            case '20':paginationN=21;break;
+            case '25':paginationN=26;break;
+            case '30':paginationN=31;break;}
+    paginationList.children[currentPage].classList.remove("active","bg-slate-500");
+    paginationList.children[+currentPage+1].classList.add("active","bg-slate-500");
+    
+    if(filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none"){
+        displayBooks(filteredData,+currentPage+1);
+        return;
+    }
+    displayBooks(booksData,+currentPage+1);
+
+
+
+}
+
+
+
+
+filterByLang.onchange = function() {
     if(filterByGenre.value === "none" && filterByLang.value === "none" && filterByType.value === "none"){
         displayBooks(booksData);
         return;
