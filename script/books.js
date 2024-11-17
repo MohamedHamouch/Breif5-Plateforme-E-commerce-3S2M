@@ -1,6 +1,9 @@
 
+
 const booksContainer = document.querySelector('.books-container');
 let booksData = []
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -10,13 +13,28 @@ document.addEventListener("DOMContentLoaded", () => {
     
 });
     function bookItem(book){
-        return `<div class="w-auto h-[350px] flex flex-col items-center justify-between gap-2 hover:bg-gray-100">
-              <div class="bg-[#4B6587] w-[200px] h-[230px] max-[750px]:w-[130px] ">
+        return `<div class="w-auto h-[400px] flex  flex-col items-center justify-between gap-2 p-2 max-[900px]:text-sm ">
+              <div class="bg-[#4B6587] w-[200px] h-[230px] max-[750px]:w-[140px]">
               <a onclick="" href="../pages/details.html"><img src="${book.img}" alt="${book.title} " class="w-full h-full"></a>
               </div>
-              <h2 class="font-bold text-center">${book.title}</h2>
-              <h3 class="font-extralight text-center">${book.author}</h3>
-              <button type="button" id="${book.id}" class="bg-orange-600 font-bold text-white  h-[40px] w-auto text-center max-[600px]:text-xs rounded-md py-2 px-3 ">Add to Cart</button>
+              <div class=" self-start w-full">
+            <h1 class="font-bold place-self-center max-w-[80%]">${book.title}</h1>
+            <div class="flex self-start space-x-3 mt-2">
+                <h3 class="text-gray-500 font-bold ">${book.price}$</h3>
+                <del class="text-gray-500 font-bold ">${book.price+19.9}$</del>
+            </div>
+            <div class="flex self-start text-sm space-x-2 mb-2 relative">
+               <div>
+                <i class="fa-sharp fa-solid fa-star" style="color: #ffad33;"></i>
+                <i class="fa-sharp fa-solid fa-star" style="color: #ffad33;"></i>
+                <i class="fa-sharp fa-solid fa-star" style="color: #ffad33;"></i>
+                <i class="fa-sharp fa-solid fa-star" style="color: #ffad33;"></i>
+                <i class="fa-sharp fa-solid fa-star" style="color: #ffad33;"></i>
+               </div>
+                <div><h1 class="absolute text-gray-500 font-bold ">(88)</h1></div>
+
+            </div>
+             <div class="place-self-center"> <button type="button" id="${book.id}" class="bg-orange-600 font-bold text-white  h-[40px] w-auto text-center max-[600px]:text-xs rounded-md py-2 px-3 ">Add to Cart</button></div>
             </div>`
     }
     function displayBooks (data,currentPage=0){
@@ -50,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         booksPerPage=booksPerPage+currentPage * 12;
         for(let i=currentPage*12;i<booksPerPage;i++){
           let bookElement = document.createElement('div');
-            bookElement.classList.add('book-item','w-auto','flex','flex-col','items-center','gap-x-22','gap-y-10','rounded-sm','shadow-[0_3px_7px_-3px_rgba(0,0,0,0.3)]','p-1');
+            bookElement.classList.add('book-item','w-auto','flex','flex-col','items-center','gap-x-22','gap-y-10','rounded-sm','shadow-[0_3px_7px_-3px_rgba(0,0,0,0.3)]','p-1','hover:bg-gray-200');
 
             bookElement.innerHTML = bookItem(data[i]);
             
@@ -122,9 +140,8 @@ displayBooks(booksData,+currentPage-1);
 nextPage.onclick = function (){
    
     let currentPage = document.querySelector(".active").innerText - 1;
-    console.log(currentPage);
     
-    if(((filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none") && Math.ceil((filteredData.length+1)/12)<=(+currentPage+1))||Math.ceil((booksData.length+1)/12)<=(+currentPage+1)){
+    if(((filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none" || ((filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none") && sorting.value != "none")) && Math.ceil((filteredData.length+1)/12)<=(+currentPage+1))||Math.ceil((booksData.length+1)/12)<=(+currentPage+1)){
         return;
     }
     
@@ -138,7 +155,7 @@ nextPage.onclick = function (){
     paginationList.children[currentPage].classList.remove("active","bg-slate-500");
     paginationList.children[+currentPage+1].classList.add("active","bg-slate-500");
     
-    if(filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none"){
+    if(filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none" || ((filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none") && sorting.value != "none")){
         displayBooks(filteredData,+currentPage+1);
         return;
     }
