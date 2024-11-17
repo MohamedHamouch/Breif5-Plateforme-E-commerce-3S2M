@@ -8,7 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // console.log(booksData);
     console.log(cartData);
     displayCart();
+    
 });
+
+function countbook() {
+    let countbook = document.querySelector("#book-count")  
+    countbook.innerHTML = card.length
+
+}
 
 function displayCart() {
     booksContainer.innerHTML = "";
@@ -54,8 +61,10 @@ function displayCart() {
                 if (bookIndex !== -1) {
                     cartData.splice(bookIndex, 1);
                     localStorage.setItem('card', JSON.stringify(cartData));
+                    countbook()
                     if (cartData.length === 0) {
                         displayCart();
+                    
                     }else{
                         calcTotals();
                     }
@@ -78,6 +87,8 @@ function displayCart() {
                 }
             });
 
+            
+
         });
     }
     countbook();
@@ -88,15 +99,13 @@ emptyBtn.addEventListener('click', () => {
     cartData = [];
     booksContainer.innerHTML = ""
     console.log(cartData)
-    displayCart();
     localStorage.setItem('card', JSON.stringify(cartData));
+    countbook()
+    displayCart();
+    
 });
 
-function countbook() {
-    let countbook = document.querySelector('#book-count')
-    countbook.innerHTML = cartData.length
 
-}
 
 const subtotals = document.querySelector('#subtotals');
 const totals = document.querySelector('#total')
@@ -110,3 +119,6 @@ function calcTotals() {
     totals.innerHTML = `$${total.toFixed(2)}`;
 
 }
+
+
+
