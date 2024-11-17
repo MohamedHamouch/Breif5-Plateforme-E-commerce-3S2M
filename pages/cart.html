@@ -60,8 +60,7 @@
 
 
                 <!-- hada l menu -->
-                <div class="z-50 hidden fixed top-16 right-0 h-screen w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-lg  transition-all ease-in-out transform scale-95 opacity-0"
-                    id="menuShow">
+                <div class="z-50 hidden fixed top-[34px] right-[-5px]  h-screen w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-lg transition-all ease-in-out transform scale-95 opacity-0" id="menuShow">
                     <div class="px-8 py-3 text-gray-900 ">
                         <!-- Header content like user's name or avatar -->
                         <button type="button"
@@ -247,7 +246,7 @@
         <!-- section for cupon and total -->
         <section class="flex flex-col gap-4 items-center">
             <!--Cupon code-->
-            <div class="bg-gray-200 p-4 w-11/12 sm:w-3/4 md:w-3/5 lg:w-10/12 m-auto text-sm sm:text-base font-semibold">
+            <div class="bg-gray-200 p-4 w-11/12 sm:w-3/4 md:w-3/5 lg:w-10/12 m-5 text-sm sm:text-base font-semibold">
                 <p class="text-black font-semibold mb-2">Use a coupon code to get a discount</p>
                 <div class="flex space-x-2">
                     <input type="text" placeholder="Enter coupon code ..."
@@ -259,7 +258,7 @@
             <!-- total adding -->
             <p class="text-center text-3xl font-bold">Cart Totals</p>
             <div
-                class="flex flex-col gap-4 bg-gray-200 px-8 py-5 w-11/12 sm:w-3/4 md:w-3/5 lg:w-10/12 m-auto text-base font-semibold">
+                class="flex flex-col gap-4 bg-gray-200 px-8 py-5 w-11/12 sm:w-3/4 md:w-3/5 lg:w-10/12  text-base font-semibold">
                 <p class="flex justify-between">Subtotals <span id="subtotals"></span></p>
                 <p class="flex justify-between">Shipping <span>Free</span></p>
                 <p class="flex justify-between">Tax <span>$0.00</span></p>
@@ -342,6 +341,7 @@
 
 
     <script src="../script/cart.js"></script>
+    <script src="../script/totop.js"></script>
 
 </body>
 

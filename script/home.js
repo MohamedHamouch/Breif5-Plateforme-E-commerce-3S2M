@@ -1,5 +1,4 @@
-const menuButton = document.getElementById('button-menu');
-const menu = document.getElementById('menuShow');
+
 let days = parseInt(document.getElementById('days').textContent);
 let hours = parseInt(document.getElementById('hours').textContent);
 let minutes = parseInt(document.getElementById('minutes').textContent);
@@ -19,77 +18,59 @@ window.onload = function() {
     // localStorage.removeItem("card");
     booksAPI()
     showdata()
-    countbook()
     displayBooks()
-    
+    startCountdown();
 
 };
 
-// // function timeHome(days,hours,minutes,seconds){
-// //     if (days>0 && hours>0 && minutes > 0 && seconds){
-// //         days--;
-// //         hours--;
-// //         minutes--;
-// //         seconds--;
-// //     }
-// // }
+function startCountdown() {
+    let days = parseInt(localStorage.getItem('days')) || 9; 
+    let hours = parseInt(localStorage.getItem('hours')) || 0;
+    let minutes = parseInt(localStorage.getItem('minutes')) || 0; 
+    let seconds = parseInt(localStorage.getItem('seconds')) || 0;
+
+    function updateCountdown() {
+        if (seconds > 0) {
+            seconds--;
+        } else if (minutes > 0) {
+            minutes--;
+            seconds = 59;
+        } else if (hours > 0) {
+            hours--;
+            minutes = 59;
+            seconds = 59;
+        } else if (days > 0) {
+            days--;
+            hours = 23;
+            minutes = 59;
+            seconds = 59;
+        }
+
+        localStorage.setItem('days', days);
+        localStorage.setItem('hours', hours);
+        localStorage.setItem('minutes', minutes);
+        localStorage.setItem('seconds', seconds);
+
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+}
 
 
-// // const countdownInterval = setInterval(timeHome(days,hours,minutes,seconds), 1000);
 
 
-// function startCountdown() {
-//     // Get initial values from input fields
-//     let days = parseInt(document.getElementById('days').textContent);
-//     let hours = parseInt(document.getElementById('hours').textContent);
-//     let minutes = parseInt(document.getElementById('minutes').textContent);
-//     let seconds = parseInt(document.getElementById('seconds').textContent);
-
-//     function updateCountdown() {
-//         if (seconds > 0) {
-//             seconds--;
-//         } else if (minutes > 0) {
-//             minutes--;
-//             seconds = 59;
-//         } else if (hours > 0) {
-//             hours--;
-//             minutes = 59;
-//             seconds = 59;
-//         } else if (days > 0) {
-//             days--;
-//             hours = 23;
-//             minutes = 59;
-//             seconds = 59;
-//         } else {
-//             clearInterval(countdownInterval);
-//             alert("Countdown finished!");
-//             return;
-//         }
-
-//         // Update input fields with new values
-//         document.getElementById('days').value = String(days).padStart(2, '0');
-//         document.getElementById('hours').value = String(hours).padStart(2, '0');
-//         document.getElementById('minutes').value = String(minutes).padStart(2, '0');
-//         document.getElementById('seconds').value = String(seconds).padStart(2, '0');
-//     }
-
-//     const countdownInterval = setInterval(updateCountdown, 1000);
-// }
-
-// startCountdown();
 
 
 let favourite = JSON.parse(localStorage.getItem('favourite')) || [];
-let card = JSON.parse(localStorage.getItem('card')) || [];
 let quantite = {};
 
 
 
-function countbook(){
-    let countbook = document.querySelector("#book-count")  
-    countbook.innerHTML = card.length
 
-0}
 
 function displayBooks(){
 
@@ -229,3 +210,4 @@ function showdata(){
 
       
 }}
+

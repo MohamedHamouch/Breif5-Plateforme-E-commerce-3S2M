@@ -44,13 +44,13 @@
                <a href="cart.html">
                 <img class="w-6 h-6" src="../images/Home/shopping-cart (1).png" alt="shopping cart icon">
                 <!-- hada lcount number -->
-                <span class="absolute top-1 right-2 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-black bg-customYellow rounded-full transform translate-x-1/2 -translate-y-1/2">
-                    3
+                <span id="book-count" class="absolute top-1 right-2 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-black bg-customYellow rounded-full transform translate-x-1/2 -translate-y-1/2">
+            
                 </span>
                </a>
             </button>
             
-            <div class="z-50 hidden fixed top-16 right-0 h-screen w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-lg  transition-all ease-in-out transform scale-95 opacity-0" id="menuShow">
+            <div class="z-50 hidden fixed top-[34px] right-[-5px]  h-screen w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-lg transition-all ease-in-out transform scale-95 opacity-0" id="menuShow">
                 <div class="px-8 py-3 text-gray-900 ">
                     
                     <button type="button" class="relative md:mr-3 hover:border hover:border-white hover:rounded-lg p-1 transition duration-200">
@@ -111,14 +111,10 @@
         </div>
       </nav>
       <main>
-        <section>
-          <div style="background-image: url('../images/Books/Books.jpg');" class="QuotesSection bg-cover  relative bg-no-repeat w-full min-h-[30rem] max-md:bg-none" >
-            <div class="bg-yellow-200 w-[80%] p-3 absolute left-[10%] bottom-10 max-[425px]:bottom-1">
-                <q class="quote " style="font-family: 'Sour Gummy', sans-serif;">THE MORE THAT YOU READ, THE MORE THINGS YOU WILL KNOW.
-              THE MORE THAT YOU LEARN,THE MORE PLACES YOU'LL GO.</q>
-              <div class="flex justify-end"><hr class="w-5 border-0 h-[4px] mx-1 bg-black mt-2.5"><p class="quoteAuthor flex font-extralight" style="font-family: 'Sour Gummy', sans-serif;">Dr.Seuss, I Can Read With My Eyes Shut!</div>
-            </div>
-          </div>
+     
+        <section class="relative w-full">
+            <img src="../images/Books/Books.png" alt="Hero Image" class="w-full  object-contain">
+        
         </section>
         <section>
           <div class="SearchSection">
@@ -243,7 +239,6 @@
   </div>
 </footer>
       
-      <script src="../script/home.js"></script>
       <script src="../script/books.js"></script>
       <script src="../script/totop.js"></script>
     </body>

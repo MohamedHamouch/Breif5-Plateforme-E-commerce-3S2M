@@ -52,8 +52,8 @@
       </button>
     </div>
 
-    <!-- Mobile Menu (Hidden by default) -->
-    <div class="z-50 hidden fixed top-16 right-0 h-screen w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-lg transition-all ease-in-out transform scale-95 opacity-0" id="menuShow">
+    <!-- Mobile Menu -->
+    <div class="z-50 hidden fixed top-[34px] right-[-5px]  h-screen w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-lg transition-all ease-in-out transform scale-95 opacity-0" id="menuShow">
       <div class="px-8 py-3 text-gray-900">
         <button type="button" class="relative md:mr-3 hover:border hover:border-white hover:rounded-lg p-1 transition duration-200">
           <img class="w-20 h-10" src="../images/Home/Logo-blue.png" alt="user photo">
@@ -107,31 +107,26 @@
     </div>
     <div class="flex md:gap-20 gap-10">
         <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16">Flash Sales</h1>
-       <div >
-
-    
-        <div class="flex md:gap-4 gap-2">
-            <h1 class=" " id="days">Days</h1>
-            <h1 class="" id="hours"> </h1>
-            <h1 class="" id="days">Hours</h1>
-            <h1 class="" id="minutes"> </h1>
-            <h1 class="" id="days" >Minutes</h1>
-            <h1 class="" id="seconds"> </h1>
-            <h1 class="" id="days">Seconds</h1>
-          </div>
-   
-      <div class="flex md:gap-4 gap-2">
-        <h1 class="text-2xl sm:text-3xl  font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16" id="days">03</h1>
-        <h1 class="text-2xl sm:text-3xl text-orange-500 mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16">:</h1>
-        <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16" id="hours">23</h1>
-        <h1 class="text-2xl sm:text-3xl  text-orange-500 mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16" >:</h1>
-        <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16" id="minutes">19</h1>
-        <h1 class="text-2xl sm:text-3xl text-orange-500 mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16">:</h1>
-        <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16" id="seconds">56</h1>
-      </div>
-       </div> 
+        <div>
+            <div class="flex md:gap-4 gap-2">
+                <h1>Days</h1>
+                <h1>Hours</h1>
+                <h1 >Minutes</h1>
+                <h1 >Seconds</h1>
+            </div>
+            <div class="flex md:gap-4 gap-2">
+                <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16" id="days">09</h1>
+                <h1 class="text-2xl sm:text-3xl text-orange-500 mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16">:</h1>
+                <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16" id="hours">23</h1>
+                <h1 class="text-2xl sm:text-3xl text-orange-500 mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16">:</h1>
+                <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16" id="minutes">19</h1>
+                <h1 class="text-2xl sm:text-3xl text-orange-500 mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16">:</h1>
+                <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16" id="seconds">10</h1>
+            </div>
+        </div>
     </div>
 </div>
+
     
 <div class="flex justify-center">
     <!-- Make the grid responsive with appropriate Tailwind breakpoints -->
@@ -156,36 +151,44 @@
 </div>
 
 <div class="flex overflow-x-auto space-x-4 p-4 w-full " id="scroll-continer">
-  
-    <div class="flex flex-col items-center justify-center w-40 h-40 border rounded-lg hover:bg-custembleumenu hover:text-white shrink-0">
-        <img src="../images/Home/Black_open_book 4.png" alt="icon" class="w-15 h-15 mb-2">
-        <span class="font-medium">Thriller</span>
-    </div>
+    <a href="books.html">
+        <div class="flex flex-col items-center justify-center w-40 h-40 border rounded-lg hover:bg-custembleumenu hover:text-white shrink-0">
+            <img src="../images/Home/Black_open_book 4.png" alt="icon" class="w-15 h-15 mb-2">
+            <span class="font-medium">Thriller</span>
+        </div>
+    </a>
 
+    <a href="books.html">
     <div class="flex flex-col items-center justify-center w-40 h-40 border rounded-lg hover:bg-custembleumenu hover:text-white shrink-0">
         <img src="../images/Home/Black_open_book 4.png" alt="icon" class="w-15 h-15 mb-2">
         <span class="font-medium">Fantasy</span>
     </div>
-
+    </a>
+    <a href="books.html">
     <div class="flex flex-col items-center justify-center w-40 h-40 border rounded-lg hover:bg-custembleumenu hover:text-white shrink-0">
         <img src="../images/Home/Black_open_book 4.png" alt="icon" class="w-15 h-15 mb-2">
         <span class="font-medium">Children's Books</span>
     </div>
-
+    </a>
+    <a href="books.html">
     <div class="flex flex-col items-center justify-center w-40 h-40 border rounded-lg hover:bg-custembleumenu hover:text-white shrink-0">
         <img src="../images/Home/Black_open_book 4.png" alt="icon" class="w-15 h-15 mb-2">
         <span class="font-medium">Science & Fantasy</span>
     </div>
-
+    </a>   
+    <a href="books.html">
     <div class="flex flex-col items-center justify-center w-40 h-40 border rounded-lg hover:bg-custembleumenu hover:text-white shrink-0">
         <img src="../images/Home/Black_open_book 4.png" alt="icon" class="w-15 h-15 mb-2">
         <span class="font-medium">Historical Fiction</span>
     </div>
+    </a> 
     <!-- Card 6 -->
+     <a href="books.html">
     <div class="flex flex-col items-center justify-center w-40 h-40 border rounded-lg hover:bg-custembleumenu hover:text-white shrink-0">
         <img src="../images/Home/Black_open_book 4.png" alt="icon" class="w-15 h-15 mb-2">
         <span class="font-medium">Horror</span>
     </div>
+</a>
 </div>
 
 <section class="w-full max-w-[1450px] mx-auto px-4 flex justify-center items-center p-28">
@@ -206,21 +209,11 @@
     </div>
 </div>
     
-
+<br><br><br>
 <div class="flex justify-center">
     <!-- Make the grid responsive with appropriate Tailwind breakpoints -->
     <div id="div-book2" class="grid grid-cols-2  sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4" >
         
-        <div id="book-element4"></div>
-        <div id="book-element5"></div>
-        <div id="book-element6"></div>
-        <div id="book-element7"></div>
-        <div id="book-element8"></div>
-        <div id="book-element9"></div>
-        <div id="book-element10"></div>
-        <div id="book-element11"></div>
-
-      
     </div>
 </div>
 
