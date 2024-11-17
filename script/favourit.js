@@ -9,14 +9,16 @@ let favData = [];
 document.addEventListener("DOMContentLoaded", () => {
     booksData = JSON.parse(localStorage.getItem('booksData')) || [];
     favData = JSON.parse(localStorage.getItem('favourite')) || [];
-    console.log(booksData);
-    console.log(typeof favData);
+    favourite = JSON.parse(localStorage.getItem('favourite')) || [];
+    showdata()
+    displayBooks()
     displayFavBooks();
 });
 
 function displayFavBooks() {
-    favContainer.innerHTML = ""
+    favContainer.innerHTML = "";
     favContainer.className = "w-full sm:w-4/5 md:w-3/4 lg:w-11/12 xl:w-10/12 min-h-44 grid lg:grid-cols-2 gap-y-8 lg:gap-x-8 xl:gap-x-14 px-3 sm:px-5 m-auto text-base sm:text-lg md:text-2xlg lg:text-lg xl:text-xl";
+
     if (favData.length === 0) {
         const emptyMessage = document.createElement('p');
         emptyMessage.textContent = "Your favourite list is empty.";
@@ -27,26 +29,21 @@ function displayFavBooks() {
         return;
     }
 
-    favData.forEach(book => {
-
+    favData.forEach((book) => {
         let newBook = document.createElement('div');
-        newBook.className = "grid grid-cols-[35%,1fr] p-2 sm:p-4 min-h-44 rounded-md md:rounded-lg fav-book"
-        newBook.innerHTML =
-            `<img src="${book.img}" alt="${book.title}"
-                    class="w-[85%] sm:w-4/5 h-auto object-contain">
-                <div class="flex flex-col justify-between font-semibold">
-                    <p>${book.title}</p>
-                    <p>by <span class="font-bold text-[#4B6587]">${book.author}</span></p>
-                    <p>${book.category}</p>
-                    <p class="text-[#C44436]">$${book.price}</p>
-                    <div class="flex justify-between">
-                        <button
-                            class="add-cart-btn bg-[#4B6587] text-white text-xs sm:text-base lg:text-sm xl:text-base md:p-2 lg:p-0 font-semibold w-2/5 lg:w-[45%] xl:w-2/5 h-9 sm:h-11 lg:h-9 xl:h-11 rounded-md">Add
-                            to Cart</button>
-                        <button id="remove-fav"
-                            class="remove-fav-btn bg-[#C44436] text-white text-xs sm:text-base lg:text-sm xl:text-base md:p-2 lg:p-0 font-semibold w-2/5 lg:w-[45%] xl:w-2/5 h-9 sm:h-11 lg:h-9 xl:h-11 rounded-md">Remove</button>
-                    </div>
-                </div>`
+        newBook.className = "grid grid-cols-[35%,1fr] p-2 sm:p-4 min-h-44 rounded-md md:rounded-lg fav-book";
+        newBook.innerHTML = `
+            <img src="${book.img}" alt="${book.title}" class="w-[85%] sm:w-4/5 h-auto object-contain">
+            <div class="flex flex-col justify-between font-semibold">
+                <p>${book.title}</p>
+                <p>by <span class="font-bold text-[#4B6587]">${book.author}</span></p>
+                <p>${book.category}</p>
+                <p class="text-[#C44436]">$${book.price}</p>
+                <div class="flex justify-between">
+                    <button class="add-cart-btn bg-[#4B6587] text-white text-xs sm:text-base lg:text-sm xl:text-base md:p-2 lg:p-0 font-semibold w-2/5 lg:w-[45%] xl:w-2/5 h-9 sm:h-11 lg:h-9 xl:h-11 rounded-md">Add to Cart</button>
+                    <button class="remove-fav-btn bg-[#C44436] text-white text-xs sm:text-base lg:text-sm xl:text-base md:p-2 lg:p-0 font-semibold w-2/5 lg:w-[45%] xl:w-2/5 h-9 sm:h-11 lg:h-9 xl:h-11 rounded-md">Remove</button>
+                </div>
+            </div>`;
         favContainer.appendChild(newBook);
 
         const removeButton = newBook.querySelector('.remove-fav-btn');
@@ -61,14 +58,27 @@ function displayFavBooks() {
                 }
             }
         });
+
+        const addCartButton = newBook.querySelector('.add-cart-btn');
+        addCartButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+
+            const existingBookIndex = card.findIndex(item => item.id === book.id);
+            if (existingBookIndex === -1) {
+                let newBook = { ...book, quantity: 1 };
+                card.push(newBook);
+                localStorage.setItem('card', JSON.stringify(card));
+                countbook();
+            }
+        });
     });
 }
+
 
 let quantite = "";
 
 function displayBooks(){
     const data = JSON.parse(localStorage.getItem('booksData'))
-    let favourite = JSON.parse(localStorage.getItem('favourite')) || [];
     for(let i = 0 ; i<data.length;i++){
         
         const heartButton = document.querySelector(`#heartButton-${i}`);
@@ -93,8 +103,13 @@ function displayBooks(){
                     heartIcon.classList.remove('fa-regular');
                     heartIcon.style.color = 'red';
                     favourite.push(data[i]);
+                    
                 }
                 localStorage.setItem('favourite', JSON.stringify(favourite));
+                favData = [...favourite];
+                displayFavBooks();
+                
+               
             });
                 
                 document.querySelector(`#eyeButton-${i}`).addEventListener('click', () => {
@@ -127,6 +142,7 @@ function displayBooks(){
                   
                       localStorage.setItem('card', JSON.stringify(card));
                       countbook();
+                      displayFavBooks()
                     },{ once: true });
                   });
                   
@@ -200,5 +216,3 @@ function showdata(){
           
     }}
 
-showdata()
-displayBooks()
