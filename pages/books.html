@@ -134,19 +134,26 @@
         </section>
         <section>
           <div class="my-8 bg-orange-100 p-3 flex flex-wrap w-[80%] max-[400px]:w-full justify-between rounded-md gap-3 justify-self-center">
-          <div class="FilterSectuin flex  gap-x-2">
+          <div class="FilterSectuin flex flex-wrap  gap-2">
             <h3 class="text-blue-950 font-bold text-xl" style="font-family:'Poppins';">Filter:</h3>
             <select name="byGenre" id="genre" class="border-2 outline-none rounded-md border-black text-sm w-[113px] self-center p-1"><option value="none">By Genre :</option>
-            <option value="Fiction" class="text-center">Fiction</option>
-            <option value="Non-Fiction" class="text-center">Non-Fiction</option>
-            <option value="Adult" class="text-center">Adult</option>
-            <option value="Children" class="text-center">Children</option>
+            <option value="Science Fiction" class="text-center">Science Fiction</option>
+            <option value="Fantasy" class="text-center">Fantasy</option>
+            <option value="Thriller" class="text-center">Thriller</option>
+            <option value="Historical Fiction" class="text-center">Historical Fiction</option>
+            <option value="Horror" class="text-center">Horror</option>
             </select>
             <select name="byLanuagege" id="language" class="border-2 outline-none rounded-md border-black text-sm w-[113px] self-center p-1">
-            <option value="none">By Language</option>
+            <option value="none">By Language:</option>
             <option value="Arabic" class="text-center">Arabic</option>
             <option value="English" class="text-center">English</option>
             <option value="French" class="text-center">French</option>
+          </select>
+          <select name="byType" id="byType" class=" border-2 outline-none rounded-md border-black text-sm w-[113px] self-center p-1">
+            <option value="none">By Type:</option>
+            <option value="Adult" class="text-center">Adult</option>
+            <option value="Young Adult (YA)" class="text-center">Young Adult(YA)</option>
+            <option value="Children's Fiction" class="text-center">Children's Fiction</option>
           </select>
           </div>
           <div class="SortSection flex gap-x-2">
@@ -161,18 +168,15 @@
         </div>
         </section>
         <section>
-          <div class="books-container grid grid-cols-4 gap-5 justify-self-center grid-rows-4  w-[80%] max-lg:grid-cols-3 max-[500px]:grid-cols-2 mb-8">
+          <div class="books-container grid grid-cols-4 gap-5 justify-self-center max-grid-rows-6  w-[80%] max-lg:grid-cols-3 max-[500px]:grid-cols-2 mb-8">
             
             </div>
-            <div class="pagination justify-self-center my-16 ">
-              <a href="#" class="max-[400px]:mr-[5px] mr-[10px] text-xl font-bold"><i class="fa-solid fa-angles-left"></i></a>
-              <a href="#" class="max-[400px]:px-[12] max-[400px]:py-[7px] px-[15px] py-[10px] bg-gray-300  md:hover:bg-[#4B6587]" >1</a>
-              <a href="#" class="max-[400px]:px-[12] max-[400px]:py-[7px] px-[15px] py-[10px] bg-gray-300  md:hover:bg-[#4B6587]" >2</a>
-              <a href="#" class="max-[400px]:px-[12] max-[400px]:py-[7px] px-[15px] py-[10px] bg-gray-300  md:hover:bg-[#4B6587]" >3</a>
-              <a href="#" class="max-[400px]:px-[12] max-[400px]:py-[7px] px-[15px] py-[10px] bg-gray-300  md:hover:bg-[#4B6587]" >4</a>
-              <a href="#" class="max-[400px]:px-[12] max-[400px]:py-[7px] px-[15px] py-[10px] bg-gray-300  md:hover:bg-[#4B6587]" >5</a>
-              <a href="#" class="max-[400px]:px-[12] max-[400px]:py-[7px] px-[15px] py-[10px] bg-gray-300  md:hover:bg-[#4B6587]" >6</a>
-              <a href="#" class="max-[400px]:ml-[5px] ml-[10px] text-xl font-bold" ><i class="fa-solid fa-angles-left rotate-180"></i></a>
+              <div class="flex justify-self-center my-16">
+              <button id="previousPage" class="max-[400px]:mr-[5px] mr-[10px] text-xl font-bold"><i class="fa-solid fa-angles-left"></i></button>
+              <ul class="pagination list-none  flex gap-1">
+              
+              </ul>
+              <button id="nextPage" class="max-[400px]:ml-[5px] ml-[10px] text-xl font-bold" ><i class="fa-solid fa-angles-left rotate-180"></i></button>
             </div>
 
 
