@@ -24,21 +24,23 @@ function affichData() {
                   <!-- titre -->
                 <div class="star flex flex-col ">
                     <div>
-                        <h2 id="title" class="text-3xl text-center  font-semibold font-serif">${detailbook[0].title}</h2>
+                        <h2 id="title" class="text-3xl   font-semibold font-serif">${detailbook[0].title}</h2>
                     </div>
 
                     <!-- etoile -->
                     <div class="mb-2 flex"> 
-                    <div >
+          
+
+                         <!-- prix -->
+                        <pre class="" ><span class="font-bold text-xl ">Price : </span><span id="price" class="font-bold text-2xl">${detailbook[0].price}$</span>|<span  id="stock" class="font-bold text-2xl">${detailbook[0].stock}</span></pre>
+                    </div>
+                              <div >
                     <span> <i class="fa-solid fa-star " style="color: #FFD43B;"></i></span>
                         <span> <i class="fa-solid fa-star" style="color: #FFD43B;"></i></span>
                          <span> <i class="fa-solid fa-star" style="color: #FFD43B;"></i></span>
                         <span> <i class="fa-solid fa-star" style="color: #FFD43B;"></i></span>
-                        <span> <i class="fa-solid fa-star" style="color: #a1a1a1;"></i></span>
-                    </div>
-
-                         <!-- prix -->
-                        <pre class="text-center" ><span class="font-bold text-xl ">(120 views)</span>|<span id="price" class="font-bold text-2xl">${detailbook[0].price} $</span>|<span  id="stock" class="font-bold text-2xl">${detailbook[0].stock}</span></pre>
+                        <span> <i class="fa-solid fa-star " style="color: #a1a1a1;"></i></span>
+                        <span class="font-bold text-xl ">(120 views)</span>
                     </div>
                    
                 </div>
@@ -57,7 +59,7 @@ function affichData() {
                         <!-- button de quantite -->
                         <div class="border-2 border-solid border-black  h-[46px] flex  rounded-md ">
                             <button id="moins" class=" w-[30px] h-[40px] md:w-[40px] md:h-[44px] text-black ">-</button>
-                            <button id="countour" class=" md:w-[80px] h-[44px] w-[60px] border-r-2 border-l-2 border-solid border-black text-black ">0</button>
+                            <button id="countour" class=" md:w-[80px] h-[44px] w-[60px] border-r-2 border-l-2 border-solid border-black text-black ">1</button>
                             <button id="plus" class="w-[30px] h-[43px] md:w-[40px]  text-white text-center  rounded-tr-[3.5px]  rounded-br-[3.5px]  bg-red-500 ">+</button>
                         </div>
 
@@ -135,21 +137,20 @@ affichData()
 
 
 
-let count = 0;
+let count = 1;
 const moins = document.getElementById("moins");
 const plus = document.getElementById("plus");
 const countour = document.getElementById("countour");
 
 plus.addEventListener('click', () => {
-    if (count >= 0) {
-        countour.innerText = count++;
-    }
-
+    count++;
+    countour.innerText = count; 
 });
 
 moins.addEventListener('click', () => {
-    if (count >= 0) {
-        countour.innerText = count--;
+    if (count > 1) { 
+        count--; 
+        countour.innerText = count; 
     }
 });
 
@@ -277,7 +278,7 @@ function showdata(){
 
         let table = "";
         
-            for(let i =0;i<data.length;i++){
+            for(let i =10;i<data.length;i++){
             table =
             `      
             <div id="book-element-${i}">
@@ -327,7 +328,7 @@ function showdata(){
             </div>
     
         `  
-        if(i<4){
+        if(i>=10 && i<14){
             document.querySelector("#div-book1").innerHTML += table
         }
     
