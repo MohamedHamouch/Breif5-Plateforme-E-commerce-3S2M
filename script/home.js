@@ -19,7 +19,6 @@ window.onload = function() {
     // localStorage.removeItem("card");
     booksAPI()
     showdata()
-    countbook()
     displayBooks()
     
 
@@ -80,16 +79,11 @@ window.onload = function() {
 
 
 let favourite = JSON.parse(localStorage.getItem('favourite')) || [];
-let card = JSON.parse(localStorage.getItem('card')) || [];
 let quantite = {};
 
 
 
-function countbook(){
-    let countbook = document.querySelector("#book-count")  
-    countbook.innerHTML = card.length
 
-0}
 
 function displayBooks(){
 
@@ -229,3 +223,4 @@ function showdata(){
 
       
 }}
+
