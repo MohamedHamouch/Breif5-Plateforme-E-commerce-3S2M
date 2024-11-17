@@ -56,29 +56,32 @@ function displayCart() {
                     localStorage.setItem('card', JSON.stringify(cartData));
                     if (cartData.length === 0) {
                         displayCart();
+                    }else{
+                        calcTotals();
                     }
                 }
 
             });
-            console.log(typeof book.quantity)
 
             const newQuantity = cartBook.querySelector('.quantity-input')
             newQuantity.addEventListener('input', () => {
 
                 if (Number(newQuantity.value) > 0) {
                     book.quantity = Number(newQuantity.value);
-                    console.log(typeof book.quantity)
                     const subtotal = cartBook.querySelector('.subtotal')
                     subtotal.textContent = `$${book.price * book.quantity}`;
                     localStorage.setItem('card', JSON.stringify(cartData));
+                    calcTotals();
+
                 } else {
-                    newQuantity.value = book.quantity
+                    newQuantity.value = book.quantity;
                 }
             });
 
         });
     }
     countbook();
+    calcTotals();
 }
 
 emptyBtn.addEventListener('click', () => {
@@ -90,7 +93,20 @@ emptyBtn.addEventListener('click', () => {
 });
 
 function countbook() {
-    let countbook = document.querySelector("#book-count")
+    let countbook = document.querySelector('#book-count')
     countbook.innerHTML = cartData.length
+
+}
+
+const subtotals = document.querySelector('#subtotals');
+const totals = document.querySelector('#total')
+
+function calcTotals() {
+    let total = 0;
+    cartData.forEach(book => {
+        total += book.price * book.quantity;
+    });
+    subtotals.innerHTML = `$${total.toFixed(2)}`;
+    totals.innerHTML = `$${total.toFixed(2)}`;
 
 }
