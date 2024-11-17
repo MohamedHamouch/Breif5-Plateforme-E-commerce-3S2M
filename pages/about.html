@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to The Book Library, your online destination for a wide range of books, from the latest bestsellers to timeless classics. Explore and buy books easily!">
+    <meta name="keywords" content="books, bookstore, online bookshop, buy books, The Book Library, novels, fiction, non-fiction, bestsellers">
+    <meta name="author" content="The Book Library">
+    <meta property="og:title" content="The Book Library - Online Bookstore">
+    <meta property="og:description" content="Find your next great read at The Book Library! A wide selection of books for all tastes and interests.">
+    <meta property="og:image" content="../images/Home/Logo.png">
+    <link rel="icon" href="../images/Home/FavIcone.png">
+    <link href="../css/home.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+    <title>The Book Library - Your Online Bookstore</title>
+
+<body>
+
+    <nav class="border-gray-200 " style="background-color: #4B6587;">
+
+        <div class="max-w-screen-xl flex flex-wrap items-center  justify-between mx-auto p-2" style="max-width: 1450px;">
+            <!-- hada logo -->
+        <a href="home.html" class="flex items-center  rtl:space-x-reverse ml-4">
+            <img src="../images/Home/Logo-white.png" class="h-11" alt="Books Logo" />
+        </a>
+        <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <!-- hado les icones -->
+            <button type="button" class="relative md:mr-3 hover:border hover:border-white hover:rounded-lg p-1 transition duration-200">
+                
+                <a href="favourit.html">
+                    <img class="w-6 h-6" src="../images/Home/heart (1).png" alt="user photo">
+                </a>
+              </button>
+
+              <button type="button" class="relative md:pr-2 hover:border hover:border-white hover:rounded-lg p-1 transition duration-200">
+               <a href="cart.html">
+                <img class="w-6 h-6" src="../images/Home/shopping-cart (1).png" alt="shopping cart icon">
+                <!-- hada lcount number -->
+                <span id="book-count" class="absolute top-1 right-2 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-black bg-customYellow rounded-full transform translate-x-1/2 -translate-y-1/2">
+            
+                </span>
+               </a>
+            </button>
+           
+    
+         
+         
+    
+            <!-- hada l menu -->
+            <div class="z-50 hidden fixed top-[34px] right-[-5px]  h-screen w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-lg transition-all ease-in-out transform scale-95 opacity-0" id="menuShow">
+                <div class="px-8 py-3 text-gray-900 ">
+                    <!-- Header content like user's name or avatar -->
+                    <button type="button" class="relative md:mr-3 hover:border hover:border-white hover:rounded-lg p-1 transition duration-200">
+                        <img class="w-20 h-10" src="../images/Home/Logo-blue.png" alt="user photo">
+                      </button>
+                </div>
+                <ul class="py-2">
+                    <li>
+                        <a href="home.html" class="flex items-center px-4 py-2 text-sm text-customblack hover:bg-blue-100 ">
+                            <i class="fas fa-home w-5 h-5 mr-3 mt-1 text-customblue "></i> <!-- Home Icon -->
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="books.html" class="flex items-center px-4 py-2 text-sm text-customblack hover:bg-blue-100 ">
+                            <i class="fas fa-book w-5 h-5 mr-3 mt-1 text-customblue "></i> <!-- Books Icon -->
+                            Books
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="flex items-center px-4 py-2 text-sm text-customblue bg-blue-100 font-bold">
+                            <i class="fas fa-info-circle w-5 h-5 mr-3 mt-1 text-customblue "></i> <!-- About Icon -->
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="flex items-center px-4 py-2 text-sm text-customblack hover:bg-blue-100 ">
+                            <i class="fas fa-phone-alt w-5 h-5 mr-3 mt-1 text-customblue "></i> <!-- Contact Us Icon -->
+                            Contact Us
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            <button type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200   " >
+                <img id="button-menu"   class="w-6 h-6" src="../images/Home/menu.png">
+
+            </button>
+            
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+          <ul class="flex flex-col font-bold p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
+            <li>
+              <a href="home.html" class="block py-2 px-3 text-white rounded  md:hover:text-customYellow md:p-0 " >Home</a>
+            </li>
+            <li>
+              <a href="books.html" class="block py-2 px-3 text-white rounded   md:hover:text-customYellow md:p-0  ">Books</a>
+            </li>
+            <li>
+              <a href="about.html" class="block py-2 px-3 text-white rounded md:border-b-2 md:border-customYellow   md:text-customYellow md:p-0 ">About</a>
+            </li>
+            <li>
+              <a href="contact.html" class="block py-2 px-3 text-white rounded  md:hover:text-customYellow md:p-0">Contact Us</a>
+            </li>
+   
+          </ul>
+        </div>
+        </div>
+      </nav>
+
+
+     <section class="relative w-full">
+        <img src="../images/about/aboutSection.png" alt="Hero Image" class="w-full  object-contain">
+    
+    </section>
+    <section class="content1 mt-10 mb-10">
+        <div class="content1-1 ">
+            <h1 class="text-center font-bold text-3xl md:text-5xl ">WELCOME TO OUR STORE</h1>
+            <h2 class="text-center font-bold text-xl md:text-4xl mt-8 mb-10">Books are a uniquely <br >portable magic</h2>
+            <p class="text-center mx-5 md:mx-20 text-lg md:text-2xl font-light">
+                With Mami’s determination to force her daughter to obey the laws of the church, Xiomara understands that her thoughts are best kept to herself. So when she is invited to join her school’s slam poetry club, she doesn’t want her mami finding out. But she still can’t stop thinking about performing her poems.
+            </p>
+        </div>
+        <div class="content1-2 pt-10">
+            <h1 class="text-center font-bold text-3xl mt-10 md:text-5xl mt-7">OUR STORY</h1>
+            <h2 class="text-center font-bold text-xl md:text-4xl mt-8 mb-20">The more that you read, the more <br >things you will know</h2>
+        </div>
+    
+        <div class="container flex flex-col md:flex-row  md:pl-12">
+            
+            <div class="image w-full md:w-1/2 px-4 md:px-10 mb-4 md:mb-0">
+                <img src="../images/about/about.jpg" alt="Book Image" class="w-full h-auto max-h-[50vh] md:max-h-[60vh] object-cover rounded-lg">
+            </div>
+          
+            <div class="content w-full px-4  pt-16">
+                <p class="text-center md:text-left text-lg md:text-3xl  font-light">
+                    Sometimes, you read a book and it fills you with this weird evangelical zeal, and you become convinced that the shattered world will never be put back together unless and until all living humans read the book.
+                </p>
+                <p class="text-center md:text-left text-lg md:text-3xl font-light mt-4 md:mt-10">
+                    Sometimes, you read a book and it fills you with this weird evangelical zeal, and you become convinced that the shattered world will never be put back together unless and until all living humans read the book.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="content3  mb-20">
+      <h1 class="text-center font-bold text-4xl md:text-5xl ">More information</h1>
+      <div class="more flex flex-col md:flex-row items-center justify-center mt-10">
+         
+          <div class="info bg-[#4B6587] w-[85%] p-6 md:w-[46%] px-20 flex flex-col gap-8 h-[485px] text-white">
+              <h1 class="text-white font-bold text-3xl mt-5 mb-10 md:text-3xl mb-2 ">Discutons  sur quelque chose</h1>
+              <div class="flex items-center mb-2 ">
+                  <svg class="w-7 h-12 mr-4 text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M12 12.713l-11.985-6.713 11.985-6.713 11.985 6.713-11.985 6.713zm0 2.287l-12-6.75v11.75h24v-11.75l-12 6.75z"/>
+                  </svg>
+                  <p class="md:text-2xl">i-book@gmail.com</p>
+              </div>
+              <div class="flex items-center mb-2">
+                  <svg class="w-7 h-12 mr-4 text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M12 2c-4.971 0-9 4.029-9 9 0 7.182 9 13 9 13s9-5.818 9-13c0-4.971-4.029-9-9-9zm0 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
+                  </svg>
+                  <p class="md:text-2xl">123 Street 456 House</p>
+              </div>
+              <div class="flex items-center">
+                  <svg class="w-7 h-12 mr-4 text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M12 2c-4.971 0-9 4.029-9 9 0 7.182 9 13 9 13s9-5.818 9-13c0-4.971-4.029-9-9-9zm0 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
+                  </svg>
+                  <p class="md:text-2xl">123 Street 456 House</p>
+              </div>
+          </div>
+      
+          <div class="w-[85%] md:w-[46%] h-[485px]  ">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3374.772651374127!2d-9.257703100000034!3d32.23728750000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdac211719897669%3A0x6f59fa5bb517f58a!2sYouCode%20Safi!5e0!3m2!1sfr!2sma!4v1731189998423!5m2!1sfr!2sma"
+                  width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-b-[20px] md:rounded-b-[0px] md:rounded-r-[20px]"></iframe>
+          </div>
+      </div>
+      
+  </section>
+ 
+  <button id="toTopBtn" 
+          class="fixed bottom-5 right-5 hidden p-3 rounded-full bg-[#4B6587] text-white shadow-lg hover:bg-[#F9F073] ">
+    <i class="ri-arrow-up-double-line text-2xl "></i>
+  </button>
+
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-10 grid grid-cols-1 md:grid-cols-3 gap-12">
+          <!-- About Us -->
+          <div>
+            <h2 class="text-xl font-semibold mb-4">About Us</h2>
+            <p class="text-sm leading-relaxed text-custemgraytext">
+              We are passionate about books and committed to offering a wide selection for every taste. Whether you're into classic novels, thrillers, or personal development, we have the perfect book for you. Discover, explore, and be inspired!
+            </p>
+          </div>
+          <!-- Popular Links and Categories Combined -->
+          <div class="grid grid-cols-2 gap-8">
+            <!-- Popular Links -->
+            <div>
+              <h2 class="text-xl font-semibold mb-4">Popular Links</h2>
+              <ul class="space-y-2 text-sm text-custemgraytext">
+                <li><a href="home.html" class="hover:underline">Accueil</a></li>
+                <li><a href="books.html" class="hover:underline">Books</a></li>
+                <li><a href="about.html" class="hover:underline">About</a></li>
+                <li><a href="contact.html" class="hover:underline">Contact Us</a></li>
+              </ul>
+            </div>
+            <!-- Categories -->
+            <div>
+              <h2 class="text-xl font-semibold mb-4">Categories</h2>
+              <ul class="space-y-2 text-sm text-custemgraytext">
+                <li><a href="#" class="hover:underline">Categories A</a></li>
+                <li><a href="#" class="hover:underline">Categories B</a></li>
+                <li><a href="#" class="hover:underline">Categories C</a></li>
+                <li><a href="#" class="hover:underline">Categories D</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Newsletter -->
+          <div>
+            <h2 class="text-xl font-semibold mb-4">Newsletter</h2>
+            <p class="text-sm mb-4 text-custemgraytext">Subscribe to our mailing list to receive daily updates direct to your inbox!</p>
+            <form class="flex">
+              <input type="email" placeholder="Email" class="p-2 text-black rounded-l-md focus:outline-none w-full" />
+              <button type="submit" class="bg-customblue text-white p-2 rounded-r-md hover:bg-customblue">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="container px-10 mx-auto mt-8 border-t border-gray-200  text-gray-500 pt-4 flex justify-between text-sm">
+          <p>Copyright © The Book Library | All rights reserved.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-gray-400"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-gray-400"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-gray-400"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+      </footer>
+      
+      <script src="../script/home.js"></script>
+     <script src="../script/totop.js"></script>
+    </body>
+</html>

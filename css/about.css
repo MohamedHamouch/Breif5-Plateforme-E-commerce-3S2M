@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+h1,h2,label{
+    font-family: "Lora", serif;
+}
+h1{
+    color: #4B6587;
+}
+p{
+    font-family: "Roboto", sans-serif;
+}
+/*tablete*/
+@media (min-width: 600px) and (max-width: 1023px) {
+    .container {
+      
+      flex-direction: column;
+      margin: 0 auto;
+    }
+    
+    .image, .content {
+      width: 98%;
+      margin: 10px 0; 
+      
+    }
+    .info {
+ 
+        padding-left: 5%;
+         
+       }
+  }
+ /*desctop */ 
+  @media (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+        
+      }
+    
+      .image {
+        width: 95%;
+        padding-left: 12px;
+      }
+    
+      .image img {
+        max-height: 70vh;
+      }
+    
+      .content {
+       
+        
+        padding: 0;
+       
+      
+      }
+    
+      .content p {
+       
+        margin-top: 3rem;
+      }
+      
+     
+  }
+
+ /*phone */ 
+  @media (max-width: 600PX) {
+    
+
+.info {
+ 
+ padding: 0;
+ padding-left: 8%;
+  
+}
+
+.info p {
+  font-size: 1.125rem; /* équivalent à md:text-2xl */
+}
+
+
+  }

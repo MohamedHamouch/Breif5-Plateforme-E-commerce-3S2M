@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+@media screen and (max-width: 400px) {
+    :root {
+        font-size: 0.85rem;
+    }
+}
+main button:hover{
+    opacity: 0.85;
+    transition: 0.2s ease;
+}
+.fav-book, main button{
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+}

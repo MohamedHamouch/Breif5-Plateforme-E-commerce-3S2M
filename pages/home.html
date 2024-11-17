@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to The Book Library, your online destination for a wide range of books, from the latest bestsellers to timeless classics. Explore and buy books easily!">
+    <meta name="keywords" content="books, bookstore, online bookshop, buy books, The Book Library, novels, fiction, non-fiction, bestsellers">
+    <meta name="author" content="The Book Library">
+    <meta property="og:title" content="The Book Library - Online Bookstore">
+    <meta property="og:description" content="Find your next great read at The Book Library! A wide selection of books for all tastes and interests.">
+    <meta property="og:image" content="../images/Home/Logo.png">
+    <link rel="icon" href="../images/Home/FavIcone.png">
+    <link href="../css/home.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/top-books.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+    <title>The Book Library - Your Online Bookstore</title>
+</head>
+<body>
+
+
+    <nav class="border-gray-200" style="background-color: #4B6587;">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2" style="max-width: 1450px;">
+    <!-- Logo -->
+    <a href="home.html" class="flex items-center ml-4">
+      <img src="../images/Home/Logo-white.png" class="h-11" alt="Books Logo" />
+    </a>
+
+    <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+      <!-- Favourite Icon -->
+      <button type="button" class="relative md:mr-3 hover:border hover:border-white hover:rounded-lg p-1 transition duration-200">
+        <a href="favourit.html">
+          <img class="w-6 h-6" src="../images/Home/heart (1).png" alt="user photo">
+        </a>
+      </button>
+
+      <!-- Cart Icon with Count -->
+      <button type="button" class="relative md:pr-2 hover:border hover:border-white hover:rounded-lg p-1 transition duration-200">
+        <a href="cart.html">
+          <img class="w-6 h-6" src="../images/Home/shopping-cart (1).png" alt="shopping cart icon">
+          <span id="book-count" class="absolute top-1 right-2 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-black bg-customYellow rounded-full transform translate-x-1/2 -translate-y-1/2">
+            
+          </span>
+        </a>
+      </button>
+
+      <!-- Mobile Menu Button -->
+      <button type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200">
+        <img id="button-menu" class="w-6 h-6" src="../images/Home/menu.png">
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="z-50 hidden fixed top-[34px] right-[-5px]  h-screen w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-lg transition-all ease-in-out transform scale-95 opacity-0" id="menuShow">
+      <div class="px-8 py-3 text-gray-900">
+        <button type="button" class="relative md:mr-3 hover:border hover:border-white hover:rounded-lg p-1 transition duration-200">
+          <img class="w-20 h-10" src="../images/Home/Logo-blue.png" alt="user photo">
+        </button>
+      </div>
+      <ul class="py-2">
+        <li>
+          <a href="home.html" class="flex items-center px-4 py-2 text-sm text-customblue bg-blue-100 font-bold">
+            <i class="fas fa-home w-5 h-5 mr-3 mt-1 text-customblue"></i> Home
+          </a>
+        </li>
+        <li>
+          <a href="books.html" class="flex items-center px-4 py-2 text-sm text-customblack hover:bg-blue-100">
+            <i class="fas fa-book w-5 h-5 mr-3 mt-1 text-customblue"></i> Books
+          </a>
+        </li>
+        <li>
+          <a href="about.html" class="flex items-center px-4 py-2 text-sm text-customblack hover:bg-blue-100">
+            <i class="fas fa-info-circle w-5 h-5 mr-3 mt-1 text-customblue"></i> About
+          </a>
+        </li>
+        <li>
+          <a href="contact.html" class="flex items-center px-4 py-2 text-sm text-customblack hover:bg-blue-100">
+            <i class="fas fa-phone-alt w-5 h-5 mr-3 mt-1 text-customblue"></i> Contact Us
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Desktop Navbar Links -->
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+      <ul class="flex flex-col font-bold p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+        <li><a href="home.html" class="block py-2 px-3 text-white rounded md:bg-transparent md:border-b-2 md:border-customYellow md:text-customYellow md:p-0" aria-current="page">Home</a></li>
+        <li><a href="books.html" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-customYellow md:p-0">Books</a></li>
+        <li><a href="about.html" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-customYellow md:p-0">About</a></li>
+        <li><a href="contact.html" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-customYellow md:p-0">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- section hero -->
+<section class="relative w-full">
+    <img src="../images/Home/Création sans titre (4).png" alt="Hero Image" class="w-full object-contain">
+</section>
+
+
+<div class="w-11/12 m-auto">
+    <div class="flex items-end gap-3 mt-6 sm:mt-8 md:mt-10 lg:mt-14">
+        <div class="w-4 h-8 sm:w-5 sm:h-10 bg-[#4B6587] rounded"></div>
+        <h2 class="text-[#4B6587] font-medium text-sm sm:text-lg">Today’s</h2>
+    </div>
+    <div class="flex md:gap-20 gap-10">
+        <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16">Flash Sales</h1>
+        <div>
+            <div class="flex md:gap-4 gap-2">
+                <h1>Days</h1>
+                <h1>Hours</h1>
+                <h1 >Minutes</h1>
+                <h1 >Seconds</h1>
+            </div>
+            <div class="flex md:gap-4 gap-2">
+                <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16" id="days">09</h1>
+                <h1 class="text-2xl sm:text-3xl text-orange-500 mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16">:</h1>
+                <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16" id="hours">23</h1>
+                <h1 class="text-2xl sm:text-3xl text-orange-500 mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16">:</h1>
+                <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16" id="minutes">19</h1>
+                <h1 class="text-2xl sm:text-3xl text-orange-500 mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16">:</h1>
+                <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16" id="seconds">10</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<div class="flex justify-center">
+    <!-- Make the grid responsive with appropriate Tailwind breakpoints -->
+    <div id="div-book1" class="grid grid-cols-2  sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4" >
+
+    </div>
+</div>
+
+<div class="flex justify-center mt-9">
+    <button type="button" class="text-white bg-custembleumenu hover:bg-slate-400  font-bold rounded-md  px-5 py-2.5 text-center me-2 mb-2"><a href="books.html">View All Books</a></button>
+</div>
+
+
+
+
+<div class="w-11/12 m-auto">
+    <div class="flex items-end gap-3 mt-6 sm:mt-8 md:mt-10 lg:mt-14">
+        <div class="w-4 h-8 sm:w-5 sm:h-10 bg-[#4B6587] rounded"></div>
+        <h2 class="text-[#4B6587] font-medium text-sm sm:text-lg">Categories</h2>
+    </div>
+    <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16">Browse By Category</h1>
+</div>
+
+<div class="flex overflow-x-auto space-x-4 p-4 w-full " id="scroll-continer">
+    <a href="books.html">
+        <div class="flex flex-col items-center justify-center w-40 h-40 border rounded-lg hover:bg-custembleumenu hover:text-white shrink-0">
+            <img src="../images/Home/Black_open_book 4.png" alt="icon" class="w-15 h-15 mb-2">
+            <span class="font-medium">Thriller</span>
+        </div>
+    </a>
+
+    <a href="books.html">
+    <div class="flex flex-col items-center justify-center w-40 h-40 border rounded-lg hover:bg-custembleumenu hover:text-white shrink-0">
+        <img src="../images/Home/Black_open_book 4.png" alt="icon" class="w-15 h-15 mb-2">
+        <span class="font-medium">Fantasy</span>
+    </div>
+    </a>
+    <a href="books.html">
+    <div class="flex flex-col items-center justify-center w-40 h-40 border rounded-lg hover:bg-custembleumenu hover:text-white shrink-0">
+        <img src="../images/Home/Black_open_book 4.png" alt="icon" class="w-15 h-15 mb-2">
+        <span class="font-medium">Children's Books</span>
+    </div>
+    </a>
+    <a href="books.html">
+    <div class="flex flex-col items-center justify-center w-40 h-40 border rounded-lg hover:bg-custembleumenu hover:text-white shrink-0">
+        <img src="../images/Home/Black_open_book 4.png" alt="icon" class="w-15 h-15 mb-2">
+        <span class="font-medium">Science & Fantasy</span>
+    </div>
+    </a>   
+    <a href="books.html">
+    <div class="flex flex-col items-center justify-center w-40 h-40 border rounded-lg hover:bg-custembleumenu hover:text-white shrink-0">
+        <img src="../images/Home/Black_open_book 4.png" alt="icon" class="w-15 h-15 mb-2">
+        <span class="font-medium">Historical Fiction</span>
+    </div>
+    </a> 
+    <!-- Card 6 -->
+     <a href="books.html">
+    <div class="flex flex-col items-center justify-center w-40 h-40 border rounded-lg hover:bg-custembleumenu hover:text-white shrink-0">
+        <img src="../images/Home/Black_open_book 4.png" alt="icon" class="w-15 h-15 mb-2">
+        <span class="font-medium">Horror</span>
+    </div>
+</a>
+</div>
+
+<section class="w-full max-w-[1450px] mx-auto px-4 flex justify-center items-center p-28">
+    <img class="rounded" src="../images/Home/ads (2).png" alt="Hero Image" class="w-full max-w-full h-auto">
+    
+</section>
+
+
+
+
+<div class="w-11/12 m-auto">
+    <div class="flex items-end gap-3  ">
+        <div class="w-4 h-8 sm:w-5 sm:h-10 bg-[#4B6587] rounded"></div>
+        <h2 class="text-[#4B6587] font-medium text-sm sm:text-lg">Our Books</h2>
+    </div>
+    <div class="flex md:gap-20 gap-10">
+        <h1 class="text-2xl sm:text-3xl font-bold mt-3">Explore Our Books</h1>
+    </div>
+</div>
+    
+<br><br><br>
+<div class="flex justify-center">
+    <!-- Make the grid responsive with appropriate Tailwind breakpoints -->
+    <div id="div-book2" class="grid grid-cols-2  sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4" >
+        
+    </div>
+</div>
+
+<div class="flex justify-center mt-9">
+    <button type="button" class="text-white bg-custembleumenu hover:bg-slate-400  font-bold rounded-md  px-5 py-2.5 text-center me-2 mb-2"><a href="books.html">View All Books</a></button>
+</div>
+
+<div class="flex  justify-around items-center  bg-white py-12">
+    <div class="text-center ">
+      <div class="relative inline-block">
+        <div class="rounded-full bg-gray-200 p-3">
+          <div class="rounded-full bg-black p-[10px] flex items-center justify-center">
+            <i class="fa-solid text-white fa-truck-fast"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="font-bold mt-4">FREE AND FAST DELIVERY</h3>
+      <p class="text-gray-500">Free delivery for all orders over $140</p>
+    </div>
+  
+    <div class="text-center">
+      <div class="relative inline-block">
+        <div class="rounded-full bg-gray-200 p-3">
+          <div class="rounded-full bg-black p-[10px] flex items-center justify-center">
+            <i class="fas fa-headset text-white text-lg"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="font-bold mt-4">24/7 CUSTOMER SERVICE</h3>
+      <p class="text-gray-500">Friendly 24/7 customer support</p>
+    </div>
+  
+    <div class="text-center">
+      <div class="relative inline-block">
+        <div class="rounded-full bg-gray-200 p-3">
+          <div class="rounded-full bg-black p-[10px] flex items-center justify-center">
+            <i class="fas fa-shield-alt text-white text-lg"></i>
+          </div>
+        </div>
+      </div>
+      <h3 class="font-bold mt-4">MONEY BACK GUARANTEE</h3>
+      <p class="text-gray-500">We return money within 30 days</p>
+    </div>
+  </div>
+  <button id="toTopBtn" 
+  class="fixed bottom-5 right-5 hidden p-3 rounded-full bg-[#4B6587] text-white shadow-lg hover:bg-[#F9F073] ">
+<i class="ri-arrow-up-double-line text-2xl "></i>
+</button>
+
+
+<footer class="bg-black text-white py-12">
+  <div class="container mx-auto px-10 grid grid-cols-1 md:grid-cols-3 gap-12">
+    <div>
+      <h2 class="text-xl font-semibold mb-4">About Us</h2>
+      <p class="text-sm leading-relaxed text-custemgraytext">
+        We are passionate about books and committed to offering a wide selection for every taste. Whether you're into classic novels, thrillers, or personal development, we have the perfect book for you. Discover, explore, and be inspired!
+      </p>
+    </div>
+    <div class="grid grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-xl font-semibold mb-4">Popular Links</h2>
+        <ul class="space-y-2 text-sm text-custemgraytext">
+          <li><a href="home.html" class="hover:underline">Accueil</a></li>
+          <li><a href="books.html" class="hover:underline">Books</a></li>
+          <li><a href="about.html" class="hover:underline">About</a></li>
+          <li><a href="contact.html" class="hover:underline">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-4">Categories</h2>
+        <ul class="space-y-2 text-sm text-custemgraytext">
+          <li><a href="#" class="hover:underline">Categories A</a></li>
+          <li><a href="#" class="hover:underline">Categories B</a></li>
+          <li><a href="#" class="hover:underline">Categories C</a></li>
+          <li><a href="#" class="hover:underline">Categories D</a></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-xl font-semibold mb-4">Newsletter</h2>
+      <p class="text-sm mb-4 text-custemgraytext">Subscribe to our mailing list to receive daily updates direct to your inbox!</p>
+      <form class="flex">
+        <input type="email" placeholder="Email" class="p-2 text-black rounded-l-md focus:outline-none w-full" />
+        <button type="submit" class="bg-customblue text-white p-2 rounded-r-md hover:bg-customblue">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="container px-10 mx-auto mt-8 border-t border-gray-200  text-gray-500 pt-4 flex justify-between text-sm">
+    <p>Copyright © The Book Library | All rights reserved.</p>
+    <div class="flex space-x-4">
+      <a href="#" class="hover:text-gray-400"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="hover:text-gray-400"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="hover:text-gray-400"><i class="fab fa-facebook"></i></a>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="../script/home.js"></script>
+  <script src="../script/totop.js"></script>
+</body>
+</html>

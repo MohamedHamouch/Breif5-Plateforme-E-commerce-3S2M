@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Welcome to The Book Library, your online destination for a wide range of books, from the latest bestsellers to timeless classics. Explore and buy books easily!">
+    <meta name="keywords"
+        content="books, bookstore, online bookshop, buy books, The Book Library, novels, fiction, non-fiction, bestsellers">
+    <meta name="author" content="The Book Library">
+    <meta property="og:title" content="The Book Library - Online Bookstore">
+    <meta property="og:description"
+        content="Find your next great read at The Book Library! A wide selection of books for all tastes and interests.">
+    <meta property="og:image" content="../images/Home/Logo.png">
+    <link rel="icon" href="../images/Home/FavIcone.png">
+    <link href="../css/home.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <title>The Book Library - Your Online Bookstore</title>
+</head>
+
+
+<body id="cartPage">
+
+    <nav class="border-gray-200 " style="background-color: #4B6587;">
+
+        <div class="max-w-screen-xl flex flex-wrap items-center  justify-between mx-auto p-2"
+            style="max-width: 1450px;">
+            <!-- hada logo -->
+            <a href="home.html" class="flex items-center  rtl:space-x-reverse ml-4">
+                <img src="../images/Home/Logo-white.png" class="h-11" alt="Books Logo" />
+            </a>
+            <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <!-- hado les icones -->
+                <button type="button"
+                    class="relative md:mr-3 hover:border hover:border-white hover:rounded-lg p-1 transition duration-200">
+
+                    <a href="favourit.html">
+                        <img class="w-6 h-6" src="../images/Home/heart (1).png" alt="user photo">
+                    </a>
+                </button>
+
+                <button type="button"
+                    class="relative md:pr-2 hover:border hover:border-white hover:rounded-lg p-1 transition duration-200">
+                    <a href="cart.html">
+                        <img class="w-6 h-6" src="../images/Home/shopping-cart (1).png" alt="shopping cart icon">
+                        <!-- hada lcount number -->
+                        <span id="book-count"
+                            class="absolute top-1 right-2 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-black bg-customYellow rounded-full transform translate-x-1/2 -translate-y-1/2">
+                            
+                        </span>
+                    </a>
+                </button>
+
+
+
+
+
+                <!-- hada l menu -->
+                <div class="z-50 hidden fixed top-[34px] right-[-5px]  h-screen w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-lg transition-all ease-in-out transform scale-95 opacity-0" id="menuShow">
+                    <div class="px-8 py-3 text-gray-900 ">
+                        <!-- Header content like user's name or avatar -->
+                        <button type="button"
+                            class="relative md:mr-3 hover:border hover:border-white hover:rounded-lg p-1 transition duration-200">
+                            <img class="w-20 h-10" src="../images/Home/Logo-blue.png" alt="user photo">
+                        </button>
+                    </div>
+                    <ul class="py-2">
+                        <li>
+                            <a href="home.html"
+                                class="flex items-center px-4 py-2 text-sm text-customblack hover:bg-blue-100 ">
+                                <i class="fas fa-home w-5 h-5 mr-3 mt-1 text-customblue "></i> <!-- Home Icon -->
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="books.html"
+                                class="flex items-center px-4 py-2 text-sm text-customblack hover:bg-blue-100 ">
+                                <i class="fas fa-book w-5 h-5 mr-3 mt-1 text-customblue "></i> <!-- Books Icon -->
+                                Books
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html"
+                                class="flex items-center px-4 py-2 text-sm text-customblack hover:bg-blue-100">
+                                <i class="fas fa-info-circle w-5 h-5 mr-3 mt-1 text-customblue "></i>
+                                <!-- About Icon -->
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html"
+                                class="flex items-center px-4 py-2 text-sm text-customblack hover:bg-blue-100 ">
+                                <i class="fas fa-phone-alt w-5 h-5 mr-3 mt-1 text-customblue "></i>
+                                <!-- Contact Us Icon -->
+                                Contact Us
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <button type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200   ">
+                    <img id="button-menu" class="w-6 h-6" src="../images/Home/menu.png">
+
+                </button>
+
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+                <ul
+                    class="flex flex-col font-bold p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
+                    <li>
+                        <a href="home.html"
+                            class="block py-2 px-3 text-white rounded  md:hover:text-customYellow md:p-0 ">Home</a>
+                    </li>
+                    <li>
+                        <a href="books.html"
+                            class="block py-2 px-3 text-white rounded  md:hover:text-customYellow md:p-0  ">Books</a>
+                    </li>
+                    <li>
+                        <a href="about.html"
+                            class="block py-2 px-3 text-white rounded  md:hover:text-customYellow md:p-0  ">About</a>
+                    </li>
+                    <li>
+                        <a href="contact.html"
+                            class="block py-2 px-3 text-white rounded  md:hover:text-customYellow md:p-0   ">Contact
+                            Us</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="w-11/12 m-auto">
+        <div class="flex items-end gap-3 mt-6 sm:mt-8 md:mt-10 lg:mt-14">
+            <div class="w-4 h-8 sm:w-5 sm:h-10 bg-[#4B6587] rounded"></div>
+            <h2 class="text-[#4B6587] font-medium text-sm sm:text-lg">Your cart</h2>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 sm:mb-10 md:mb-12 lg:mb-16">Check Your Cart</h1>
+    </div>
+
+
+    <main
+        class="sm:w-11/12 m-auto text-xs sm:text-sm md:text-base font-semibold grid lg:grid-cols-[60%,40%] mb-5 md:mb-10 lg:mb-14 xl:mb-20">
+        <!-- section for card and buttons -->
+        <section>
+            <div class="cart">
+                <!-- Cart header -->
+
+                <div
+                    class="grid grid-cols-[50%,auto,auto,auto,3%] items-center bg-gray-200 p-2 gap-2 sm:gap-4 font-semibold text-gray-700">
+                    <div>Book</div>
+                    <div>Price</div>
+                    <div>Quantity</div>
+                    <div>Subtotal</div>
+                    <div></div>
+                </div>
+                <section id="cart-books-container">
+                    <!-- Book -->
+                    <!-- <div
+                        class="grid grid-cols-[50%,auto,auto,auto,3%] items-center border-b p-2 gap-2 sm:gap-4 hover:bg-gray-100">
+                        <div class="flex items-center gap-2">
+                            <img src="../images/cart images/cover1.jpg" alt="The Anxious Generation"
+                                class="w-12 h-16 object-contain">
+                            <span class="text-gray-800">The Anxious Generation</span>
+                        </div>
+
+                        <div class="text-gray-700">$80.00</div>
+
+                        <div class="">
+                            <input type="number" class="w-12 text-center border rounded" value="2" min="1">
+                        </div>
+
+                        <div class="text-gray-700">$160.00</div>
+
+                        <button class="trash-icon">
+                            <i class="fa-solid fa-trash" style="color: #ffc857;"></i>
+                        </button>
+                    </div> -->
+
+                    <!-- book 2 -->
+                    <!-- <div
+                        class="grid grid-cols-[50%,auto,auto,auto,3%] items-center border-b p-2 gap-2 sm:gap-4 hover:bg-gray-100">
+
+                        <div class="flex items-center gap-2">
+                            <img src="../images/cart images/cover2.jpg" alt="Fahrenheit 451"
+                                class="w-12 h-16 object-contain">
+                            <span class="text-gray-800">Fahrenheit 451</span>
+                        </div>
+
+                        <div class="text-gray-700">$100.00</div>
+
+                        <div class="">
+                            <input type="number" class="w-12 text-center border rounded" value="1" min="1">
+                        </div>
+
+                        <div class="text-gray-700">$100.00</div>
+
+                        <div>
+                            <i class="fa-solid fa-trash" style="color: #ffc857;"></i>
+                        </div>
+                    </div> -->
+
+                    <!-- book 3 -->
+                    <!-- <div
+                        class="grid grid-cols-[50%,auto,auto,auto,3%] items-center border-b p-2 gap-2 sm:gap-4 hover:bg-gray-100">
+
+                        <div class="flex items-center gap-2">
+                            <img src="../images/cart images/cover3.jpg" alt="The Body Keeps The Score"
+                                class="w-12 h-16 object-contain">
+                            <span class="text-gray-800">The Body Keeps The Score</span>
+                        </div>
+
+                        <div class="text-gray-700">$80.00</div>
+
+                        <div class="">
+                            <input type="number" class="w-12 text-center border rounded" value="1" min="1">
+                        </div>
+
+                        <div class="text-gray-700">$80.00</div>
+
+                        <div>
+                            <i class="fa-solid fa-trash" style="color: #ffc857;"></i>
+                        </div>
+                    </div> -->
+                </section>
+
+
+            </div>
+            <!-- buttons -->
+            <div class="flex gap-5 justify-center items-center h-28">
+                <button id="empty-cart-btn"
+                    class="bg-[#4B6587] text-white text-sm md:text-base md:py-2 font-semibold w-32 md:w-40 h-11 rounded-md">Empty
+                    Cart</button>
+                <a href="../pages/books.html"> <button
+                        class="bg-[#C44436] text-white text-sm md:text-base md:py-2 font-semibold w-32 md:w-40 h-11 rounded-md">Return
+                        To Shop</button>
+            </div></a>
+        </section>
+
+        <!-- section for cupon and total -->
+        <section class="flex flex-col gap-4 items-center">
+            <!--Cupon code-->
+            <div class="bg-gray-200 p-4 w-11/12 sm:w-3/4 md:w-3/5 lg:w-10/12 m-5 text-sm sm:text-base font-semibold">
+                <p class="text-black font-semibold mb-2">Use a coupon code to get a discount</p>
+                <div class="flex space-x-2">
+                    <input type="text" placeholder="Enter coupon code ..."
+                        class="p-2 border border-gray-300 rounded-md w-4/5">
+                    <button class="bg-[#C44436] text-white font-semibold w-1/5 sm:w-32 rounded-md">Apply</button>
+                </div>
+            </div>
+
+            <!-- total adding -->
+            <p class="text-center text-3xl font-bold">Cart Totals</p>
+            <div
+                class="flex flex-col gap-4 bg-gray-200 px-8 py-5 w-11/12 sm:w-3/4 md:w-3/5 lg:w-10/12  text-base font-semibold">
+                <p class="flex justify-between">Subtotals <span id="subtotals"></span></p>
+                <p class="flex justify-between">Shipping <span>Free</span></p>
+                <p class="flex justify-between">Tax <span>$0.00</span></p>
+                <p class="flex justify-between">Discount <span>$0.00</span></p>
+                <div class="h-1 bg-black w-full"></div>
+                <p class="flex justify-between text-lg font-bold">TOTAL <span id="total"></span></p>
+
+            </div>
+            <button
+                class="bg-[#C44436] text-white text-sm md:text-base md:p-2 font-semibold w-32 md:w-40 h-11 rounded-md">Check
+                Out
+            </button>
+        </section>
+
+    </main>
+
+    <button id="toTopBtn"
+        class="fixed bottom-5 right-5 hidden p-3 rounded-full bg-[#4B6587] text-white shadow-lg hover:bg-[#F9F073] ">
+        <i class="ri-arrow-up-double-line text-2xl "></i>
+    </button>
+
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-10 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- About Us -->
+            <div>
+                <h2 class="text-xl font-semibold mb-4">About Us</h2>
+                <p class="text-sm leading-relaxed text-custemgraytext">
+                    We are passionate about books and committed to offering a wide selection for every taste. Whether
+                    you're into classic novels, thrillers, or personal development, we have the perfect book for you.
+                    Discover, explore, and be inspired!
+                </p>
+            </div>
+            <!-- Popular Links and Categories Combined -->
+            <div class="grid grid-cols-2 gap-8">
+                <!-- Popular Links -->
+                <div>
+                    <h2 class="text-xl font-semibold mb-4">Popular Links</h2>
+                    <ul class="space-y-2 text-sm text-custemgraytext">
+                        <li><a href="home.html" class="hover:underline">Accueil</a></li>
+                        <li><a href="books.html" class="hover:underline">Books</a></li>
+                        <li><a href="about.html" class="hover:underline">About</a></li>
+                        <li><a href="contact.html" class="hover:underline">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Categories -->
+                <div>
+                    <h2 class="text-xl font-semibold mb-4">Categories</h2>
+                    <ul class="space-y-2 text-sm text-custemgraytext">
+                        <li><a href="#" class="hover:underline">Categories A</a></li>
+                        <li><a href="#" class="hover:underline">Categories B</a></li>
+                        <li><a href="#" class="hover:underline">Categories C</a></li>
+                        <li><a href="#" class="hover:underline">Categories D</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Newsletter -->
+            <div>
+                <h2 class="text-xl font-semibold mb-4">Newsletter</h2>
+                <p class="text-sm mb-4 text-custemgraytext">Subscribe to our mailing list to receive daily updates
+                    direct to your inbox!</p>
+                <form class="flex">
+                    <input type="email" placeholder="Email"
+                        class="p-2 text-black rounded-l-md focus:outline-none w-full" />
+                    <button type="submit"
+                        class="bg-customblue text-white p-2 rounded-r-md hover:bg-customblue">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div
+            class="container px-10 mx-auto mt-8 border-t border-gray-200  text-gray-500 pt-4 flex justify-between text-sm">
+            <p>Copyright © The Book Library | All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-gray-400"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-gray-400"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-gray-400"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="../script/cart.js"></script>
+    <script src="../script/totop.js"></script>
+
+</body>
+
+</html>
