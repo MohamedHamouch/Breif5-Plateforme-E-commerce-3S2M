@@ -16,6 +16,8 @@
     <link rel="icon" href="../images/Home/FavIcone.png">
     <link href="../css/home.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/favourite.css">
+    <link rel="stylesheet" href="../css/top-books.css">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 
@@ -166,53 +168,20 @@
             <h1 class="text-2xl sm:text-3xl font-bold mt-3">Other Books For You</h1>
         </div>
 
-        <section
-            class="w-11/12 sm:w-5/6 md:w-11/12 lg:w-9/12 grid grid-cols-2 md:grid-cols-4 mx-auto gap-y-0 text-center">
 
-            <!-- BOOK 1 -->
-            <div class="flex flex-col gap-4 items-center justify-center" id="other-book1">
-                <img src="../images/Favoutite/cover1.jpg" alt="The Lean Startup"
-                    class="max-w-3/5 max-h-[50%] sm:mx-h-[80%]">
-                <p class="font-semibold min-h-12">The Lean fjjfj gjgjjg gjgjj Startup</p>
-                <p class="min-h-12">Eric Ries</p>
-                <button
-                    class="bg-[#4B6587] text-white text-xs sm:text-base lg:text-sm xl:text-base md:p-2 lg:p-0 font-semibold w-3/5 lg:w-[45%] xl:w-2/5 h-9 sm:h-11 lg:h-9 xl:h-11 rounded-md">Add
-                    to Cart</button>
-            </div>
-
-            <!-- BOOK 2 -->
-            <div class="flex flex-col gap-4 items-center justify-center" id="other-book2">
-                <img src="../images/Favoutite/cover2.jpg" alt="The Lean Startup" class=" max-h-[50%]">
-                <p class="font-semibold  min-h-12">The Lean Startup</p>
-                <p class="min-h-12">Eric Rie0 hamza ali sal malkins</p>
-                <button
-                    class="bg-[#4B6587] text-white text-xs sm:text-base lg:text-sm xl:text-base md:p-2 lg:p-0 font-semibold w-3/5 lg:w-[45%] xl:w-2/5 h-9 sm:h-11 lg:h-9 xl:h-11 rounded-md">Add
-                    to Cart</button>
-            </div>
-
-            <!-- BOOK 3 -->
-            <div class="flex flex-col gap-4 items-center justify-center" id="other-book3">
-                <img src="../images/Favoutite/cover3.jpg" alt="The Lean Startup" class="max-w-3/5 max-h-[50%]">
-                <p class="font-semibold">The Lean Startup</p>
-                <p>Eric Ries</p>
-                <button
-                    class="bg-[#4B6587] text-white text-xs sm:text-base lg:text-sm xl:text-base md:p-2 lg:p-0 font-semibold w-3/5 lg:w-[45%] xl:w-2/5 h-9 sm:h-11 lg:h-9 xl:h-11 rounded-md">Add
-                    to Cart</button>
-            </div>
-
-            <!-- BOOK 4 -->
-            <div class="flex flex-col gap-4 items-center justify-center" id="other-book4">
-                <img src="../images/Favoutite/cover4.jpg" alt="The Lean Startup" class="max-w-3/5 max-h-[50%]">
-                <p class="font-semibold">The Lean Startup</p>
-                <p>Eric Ries</p>
-                <button
-                    class="bg-[#4B6587] text-white text-xs sm:text-base lg:text-sm xl:text-base md:p-2 lg:p-0 font-semibold w-3/5 lg:w-[45%] xl:w-2/5 h-9 sm:h-11 lg:h-9 xl:h-11 rounded-md">Add
-                    to Cart</button>
-            </div>
-
-        </section>
+    
     </main>
 
+    <div class="flex justify-center">
+        <!-- Make the grid responsive with appropriate Tailwind breakpoints -->
+        <div id="div-book1" class="grid grid-cols-2  sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4" >
+    
+        </div>
+    </div>
+    
+    <div class="flex justify-center mt-9">
+        <button type="button" class="text-white bg-custembleumenu hover:bg-slate-400  font-bold rounded-md  px-5 py-2.5 text-center me-2 mb-2"><a href="books.html">View All Books</a></button>
+    </div>
      <button id="toTopBtn" 
           class="fixed bottom-5 right-5 hidden p-3 rounded-full bg-[#4B6587] text-white shadow-lg hover:bg-[#F9F073] ">
     <i class="ri-arrow-up-double-line text-2xl "></i>

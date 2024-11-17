@@ -19,15 +19,15 @@ window.onload = function() {
     booksAPI()
     showdata()
     displayBooks()
-    
+    startCountdown();
 
 };
 
 function startCountdown() {
-    let days = parseInt(localStorage.getItem('days'));
-    let hours = parseInt(localStorage.getItem('hours'));
-    let minutes = parseInt(localStorage.getItem('minutes'));
-    let seconds = parseInt(localStorage.getItem('seconds'));
+    let days = parseInt(localStorage.getItem('days')) || 9; 
+    let hours = parseInt(localStorage.getItem('hours')) || 0;
+    let minutes = parseInt(localStorage.getItem('minutes')) || 0; 
+    let seconds = parseInt(localStorage.getItem('seconds')) || 0;
 
     function updateCountdown() {
         if (seconds > 0) {
@@ -60,7 +60,7 @@ function startCountdown() {
     setInterval(updateCountdown, 1000);
 }
 
-startCountdown();
+
 
 
 
