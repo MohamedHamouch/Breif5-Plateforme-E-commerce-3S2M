@@ -39,6 +39,8 @@ function addbook(books) {
     });
 }
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
     addbook(booksData);
     displayBooks(booksData)
@@ -190,9 +192,8 @@ displayBooks(booksData,+currentPage-1);
 nextPage.onclick = function (){
    
     let currentPage = document.querySelector(".active").innerText - 1;
-    console.log(currentPage);
     
-    if(((filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none") && Math.ceil((filteredData.length+1)/12)<=(+currentPage+1))||Math.ceil((booksData.length+1)/12)<=(+currentPage+1)){
+    if(((filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none" || ((filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none") && sorting.value != "none")) && Math.ceil((filteredData.length+1)/12)<=(+currentPage+1))||Math.ceil((booksData.length+1)/12)<=(+currentPage+1)){
         return;
     }
     
@@ -206,7 +207,7 @@ nextPage.onclick = function (){
     paginationList.children[currentPage].classList.remove("active","bg-slate-500");
     paginationList.children[+currentPage+1].classList.add("active","bg-slate-500");
     
-    if(filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none"){
+    if(filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none" || ((filterByGenre.value != "none" || filterByLang.value != "none" ||filterByType.value != "none") && sorting.value != "none")){
         displayBooks(filteredData,+currentPage+1);
         return;
     }
